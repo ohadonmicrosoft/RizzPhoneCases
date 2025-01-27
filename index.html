@@ -1,104 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Rizz - Full 3D phone wrap designs in a modern black & teal neon theme." />
-  <meta name="keywords" content="Rizz, phone cases, 3D wrap, neon teal, customization" />
-  <meta name="author" content="Rizz" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rizz - Home</title>
-  <!-- Favicon (optional) -->
-  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rizz - The Ultimate 3D Phone Wrap Experience">
+  <meta name="keywords" content="3D, Phone Wraps, Customization, Rizz">
+  <meta name="author" content="Rizz">
+  <title>Rizz | The Future of Phone Customization</title>
+  
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Orbitron:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Neon/Glitter CSS -->
-  <link rel="stylesheet" href="css/neon.css" />
-  <!-- Fonts CSS (optional extended fonts) -->
-  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/neon.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
-    <div class="logo neon-glow">Rizz</div>
-    <div class="menu-toggle" id="openMenuBtn">
-      <span></span><span></span><span></span>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" class="neon-logo">Rizz</a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="customizer.html">Customize</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
-  <!-- Sidebar -->
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <div class="sidebar-logo neon-glow">Rizz</div>
-      <div class="close-btn" id="closeMenuBtn">&#10005;</div>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="gradient-text">Transform Your Phone</span><br> 
+          with <span class="neon-highlight">3D Wraps</span>
+        </h1>
+        <p class="hero-description">Custom phone wraps that redefine style and functionality. Design your way.</p>
+        <a href="customizer.html" class="btn btn-primary">Start Customizing</a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/hero-phone.png" alt="3D Phone Wrap" class="fade-in">
+      </div>
     </div>
-    <ul class="sidebar-nav">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="customizer.html">Customize</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="cart.html">Cart</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="overlay" id="overlay"></div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- Hero Section -->
-    <section class="parallax-hero" style="background-image: url('assets/images/hero-bg.jpg');">
-      <div class="parallax-overlay"></div>
-      <div class="hero-content fade-in neon-text">
-        <h1>Rizz 3D Wrap Cases</h1>
-        <p>Custom phone covers that wrap your design across every edge—beyond ordinary prints.</p>
-        <a href="customizer.html" class="cta-button neon-btn">Start Designing</a>
-      </div>
-    </section>
-
-    <!-- Intro Section -->
-    <section class="features-section neon-cards fade-in">
-      <h2 class="section-title neon-text">Why Rizz?</h2>
+  <!-- FEATURES SECTION -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose <span class="neon-highlight">Rizz?</span></h2>
       <div class="features-grid">
-        <div class="feature-box neon-card float-animation">
-          <h3>Full 3D Coverage</h3>
-          <p>We don't just print on the back—our specialized process wraps your design around edges for a truly immersive look.</p>
+        <div class="feature-card float-animation">
+          <i class="fas fa-mobile-alt icon"></i>
+          <h3>Immersive 3D Wraps</h3>
+          <p>Get full edge-to-edge designs that truly transform your phone.</p>
         </div>
-        <div class="feature-box neon-card float-animation">
-          <h3>Design or Choose</h3>
-          <p>Upload your own art, or pick from our gallery. Use text, shapes, and colors for an ultra-personalized style.</p>
+        <div class="feature-card float-animation">
+          <i class="fas fa-palette icon"></i>
+          <h3>Endless Customization</h3>
+          <p>Unleash your creativity with advanced design tools and templates.</p>
         </div>
-        <div class="feature-box neon-card float-animation">
-          <h3>Modern & Bold</h3>
-          <p>Experience crisp neon-teal accents, advanced 3D previews, and premium materials for a case that stands out.</p>
+        <div class="feature-card float-animation">
+          <i class="fas fa-shield-alt icon"></i>
+          <h3>Durable Materials</h3>
+          <p>Built for both style and protection, with premium materials.</p>
+        </div>
+        <div class="feature-card float-animation">
+          <i class="fas fa-leaf icon"></i>
+          <h3>Eco-Friendly</h3>
+          <p>We’re committed to sustainability, using recyclable materials.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Video Demo Section -->
-    <section class="video-demo-section fade-in">
-      <h2 class="section-title neon-text">See It In Action</h2>
-      <div class="video-container float-animation" style="max-width: 800px; margin: 0 auto;">
-        <video style="width: 100%; border-radius: 8px;" controls poster="assets/images/phone-wrap-model-screenshot.png">
-          <source src="assets/videos/sample-demo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+  <!-- SHOWCASE SECTION -->
+  <section class="showcase">
+    <div class="container showcase-content">
+      <div class="showcase-text">
+        <h2>Experience the Difference</h2>
+        <p>See your designs come to life in real-time with our 3D viewer. From every angle, your phone will shine.</p>
+        <a href="gallery.html" class="btn btn-secondary">Explore Gallery</a>
+      </div>
+      <div class="showcase-video">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/showcase.mp4" type="video/mp4">
         </video>
       </div>
-      <p class="neon-text" style="margin-top: 20px;">
-        Spin the phone, see your design hug every edge and corner.
-      </p>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer class="footer neon-text">
-    <p>&copy; 2025 Rizz - Next-Level 3D Wraps</p>
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials-slider">
+        <div class="testimonial">
+          <p>"Rizz transformed my phone into a unique piece of art. Absolutely love it!"</p>
+          <h4>- Sarah K.</h4>
+        </div>
+        <div class="testimonial">
+          <p>"The customization process was so easy, and the results are stunning."</p>
+          <h4>- Mark L.</h4>
+        </div>
+        <div class="testimonial">
+          <p>"I get compliments on my phone case all the time. Highly recommended!"</p>
+          <h4>- Emily R.</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a href="index.html" class="neon-logo">Rizz</a>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customizer.html">Customize</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-text">&copy; 2025 Rizz. All Rights Reserved.</p>
+    </div>
   </footer>
 
   <!-- JS -->

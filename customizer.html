@@ -1,142 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Rizz 3D & 2D phone-wrap customizer (darker teal neon theme)" />
-  <meta name="keywords" content="Rizz, phone, wrap, neon teal, customizer" />
-  <meta name="author" content="Rizz" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rizz - Customize</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design custom 3D phone wraps with Rizz's advanced customization tools">
+  <meta name="keywords" content="3D Customization, Phone Wraps, Personalization, Rizz">
+  <meta name="author" content="Rizz">
+  <title>Rizz | Customizer</title>
+  
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Orbitron:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Neon CSS -->
-  <link rel="stylesheet" href="css/neon.css" />
-  <!-- Fonts CSS -->
-  <link rel="stylesheet" href="css/fonts.css" />
-
-  <!-- Fabric.js (2D Editor) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
-  <!-- Three.js (for 3D) + GLTFLoader -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/neon.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
-    <div class="logo neon-glow">Rizz</div>
-    <div class="menu-toggle" id="openMenuBtn">
-      <span></span><span></span><span></span>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" class="neon-logo">Rizz</a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="customizer.html" class="active">Customize</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
-  <!-- Sidebar -->
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <div class="sidebar-logo neon-glow">Rizz</div>
-      <div class="close-btn" id="closeMenuBtn">&#10005;</div>
+  <!-- HERO SECTION -->
+  <section class="hero hero-customizer">
+    <div class="container">
+      <h1 class="hero-title">
+        <span class="gradient-text">Design Beyond Boundaries</span><br>
+        <span class="neon-highlight">Personalize Every Edge</span>
+      </h1>
+      <p class="hero-description">Create immersive 3D phone wraps with our intuitive tools and real-time previews. Elevate your design game today.</p>
+      <a href="#customizerSection" class="btn btn-primary hero-cta">Start Creating</a>
     </div>
-    <ul class="sidebar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="customizer.html" class="active">Customize</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="cart.html">Cart</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="overlay" id="overlay"></div>
+  </section>
 
-  <main class="main-content fade-in">
-    <section class="customizer-section">
-      <h1 class="neon-text">Customize Your Rizz Case</h1>
-      <p class="neon-text">Wrap your design around edges with our advanced 2D+3D tools.</p>
-
-      <!-- 2D Editor -->
-      <div class="twoD-section neon-card float-animation">
-        <h2 class="neon-text">2D Editor</h2>
-        <div class="device-selection neon-text">
-          <label for="device-model">Phone Model:</label>
-          <select id="device-model">
-            <option value="iphone14.png">iPhone 14</option>
-            <option value="iphone14promax.png">iPhone 14 Pro Max</option>
-            <option value="samsungS22.png">Samsung S22</option>
-            <option value="samsungS21.png">Samsung S21</option>
-          </select>
+  <!-- CUSTOMIZER SECTION -->
+  <section class="customizer-section" id="customizerSection">
+    <div class="container">
+      <div class="customizer-intro">
+        <h2 class="section-title neon-text">Your Customizer Dashboard</h2>
+        <p class="customizer-description">Here, you can create, tweak, and perfect your design with both 2D and 3D tools. The possibilities are endless.</p>
+      </div>
+      
+      <div class="customizer-grid">
+        <!-- 2D Editor -->
+        <div class="twoD-editor neon-card">
+          <h3 class="sub-title neon-text">2D Customizer</h3>
+          <canvas id="caseCanvas" width="400" height="700" style="background-color: #222; border-radius: 12px;"></canvas>
+          
+          <!-- 2D Editor Controls -->
+          <div class="editor-controls">
+            <h4>Editor Tools</h4>
+            <button id="uploadImageBtn" class="btn btn-secondary"><i class="fas fa-upload"></i> Upload Image</button>
+            <button id="addTextBtn" class="btn btn-secondary"><i class="fas fa-font"></i> Add Text</button>
+            <input type="color" id="colorPicker" value="#00ccaa" class="color-picker">
+            <select id="fontSelect" class="custom-select">
+              <option value="Poppins">Poppins</option>
+              <option value="Playfair Display">Playfair Display</option>
+              <option value="Arial">Arial</option>
+              <option value="Courier New">Courier New</option>
+            </select>
+          </div>
+          
+          <!-- Advanced Controls -->
+          <div class="advanced-controls">
+            <h4>Advanced Tools</h4>
+            <button id="addShapeBtn" class="btn btn-secondary"><i class="fas fa-shapes"></i> Add Shape</button>
+            <button id="addGradientBtn" class="btn btn-secondary"><i class="fas fa-paint-brush"></i> Gradient</button>
+            <button id="clearCanvasBtn" class="btn btn-danger"><i class="fas fa-trash"></i> Clear Canvas</button>
+          </div>
         </div>
 
-        <canvas id="caseCanvas" width="300" height="600" style="background-color: #222;"></canvas>
-        <div class="customizer-controls">
-          <button id="uploadImageBtn">Upload Image</button>
-          <button id="addTextBtn">Add Text</button>
-          <select id="fontSelect">
-            <option value="Poppins">Poppins</option>
-            <option value="Orbitron">Orbitron</option>
-            <option value="Arial">Arial</option>
-            <option value="Courier New">Courier</option>
-          </select>
-          <input type="color" id="colorPicker" value="#00ccaa" />
-        </div>
-
-        <div class="extra-controls">
-          <button id="addRectBtn">Rectangle</button>
-          <button id="addCircleBtn">Circle</button>
-          <button id="addTriangleBtn">Triangle</button>
-          <button id="addStarBtn">Star</button>
-          <button id="deleteObjBtn">Delete</button>
-          <button id="clearCanvasBtn">Clear All</button>
-          <button id="changeCaseColorBtn">Canvas BG</button>
-        </div>
-
-        <div class="advanced-controls">
-          <h3 class="neon-text">Advanced Styles</h3>
-          <div style="margin-bottom: 10px;">
-            <label>Gradient Start: <input type="color" id="gradColor1" value="#00ccaa" /></label>
-            <label>Gradient End: <input type="color" id="gradColor2" value="#ffffff" /></label>
-            <button id="applyGradientBtn">Gradient</button>
-          </div>
-          <div style="margin-bottom: 10px;">
-            <h4 style="margin: 10px 0;">Shadow</h4>
-            <label>X Offset: <input type="number" id="shadowX" value="5" style="width:50px;" /></label>
-            <label>Y Offset: <input type="number" id="shadowY" value="5" style="width:50px;" /></label>
-            <label>Blur: <input type="number" id="shadowBlur" value="5" style="width:50px;" /></label>
-            <label>Color: <input type="color" id="shadowColor" value="#000000" /></label>
-            <button id="applyShadowBtn">Shadow</button>
-          </div>
-          <div style="margin-bottom: 10px;">
-            <button id="saveDesignBtn">Save Design</button>
-            <button id="loadDesignBtn">Load Design</button>
-          </div>
-          <div>
-            <button id="sync3DTextureBtn" class="neon-btn">Sync with 3D</button>
-          </div>
+        <!-- 3D Viewer -->
+        <div class="threeD-viewer neon-card">
+          <h3 class="sub-title neon-text">3D Viewer</h3>
+          <p>See your design come to life in 3D. Rotate, zoom, and adjust every detail.</p>
+          <div id="threeDContainer" class="threeD-container"></div>
+          <button id="sync3DTextureBtn" class="btn btn-primary"><i class="fas fa-sync"></i> Sync with 3D</button>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- 3D Viewer -->
-      <div class="threeD-section neon-card float-animation">
-        <h2 class="neon-text">3D Preview</h2>
-        <p class="neon-text">Rotate & Zoom. Wrap across edges in real-time!</p>
-        <div id="threeDContainer" style="width: 400px; height: 400px; margin: 0 auto;"></div>
+  <!-- FEATURES SECTION -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title neon-text">Why Design with Rizz?</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <i class="fas fa-cube icon"></i>
+          <h3>Immersive 3D Previews</h3>
+          <p>See every angle of your design in real-time with our powerful 3D viewer.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-paint-brush icon"></i>
+          <h3>Advanced Editing Tools</h3>
+          <p>From gradients to custom shapes, your creativity knows no limits.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-check-circle icon"></i>
+          <h3>Easy-to-Use Interface</h3>
+          <p>Our intuitive dashboard makes designing fun and accessible to everyone.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="add-to-cart">
-        <button id="addToCartBtn" class="neon-btn">Add to Cart</button>
+  <!-- HOW IT WORKS SECTION -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title neon-text">How It Works</h2>
+      <div class="how-grid">
+        <div class="how-step">
+          <i class="fas fa-upload icon"></i>
+          <h3>Step 1</h3>
+          <p>Upload your image or start from scratch in the 2D editor.</p>
+        </div>
+        <div class="how-step">
+          <i class="fas fa-cube icon"></i>
+          <h3>Step 2</h3>
+          <p>Preview your design in 3D and fine-tune every detail.</p>
+        </div>
+        <div class="how-step">
+          <i class="fas fa-cart-plus icon"></i>
+          <h3>Step 3</h3>
+          <p>Save your masterpiece and add it to your cart for checkout.</p>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer neon-text">
-    <p>&copy; 2025 Rizz - 3D Phone Wrap Customizer</p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a href="index.html" class="neon-logo">Rizz</a>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customizer.html">Customize</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-text">&copy; 2025 Rizz. All Rights Reserved.</p>
+    </div>
   </footer>
 
+  <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/customizer.js"></script>
   <script src="js/three-customizer.js"></script>
