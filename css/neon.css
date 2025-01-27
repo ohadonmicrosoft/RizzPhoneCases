@@ -1,0 +1,69 @@
+/* NEON & GLITTER STYLES */
+
+/* Basic neon glow for text */
+.neon-text {
+    color: #fff;
+    text-shadow:
+      0 0 5px #ff00ff,
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff;
+    transition: transform 0.3s;
+  }
+  .neon-text:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Stronger neon glow for logos or headings */
+  .neon-glow {
+    color: #fff;
+    text-shadow:
+      0 0 5px #ff00ff,
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 30px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+  
+  /* Neon button style */
+  .neon-btn {
+    background-color: #ff00ff;
+    color: #fff;
+    border: none;
+    box-shadow:
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff;
+    transition: 0.3s;
+  }
+  .neon-btn:hover {
+    box-shadow:
+      0 0 15px #ff00ff,
+      0 0 30px #ff00ff;
+    transform: scale(1.06);
+  }
+  
+  /* Semi-transparent background card with neon edges */
+  .neon-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow:
+      0 0 10px rgba(255, 0, 255, 0.2),
+      0 0 20px rgba(255, 0, 255, 0.1);
+  }
+  
+  /* Glitter text keyframe */
+  @keyframes glitterSparkle {
+    0%, 100% {
+      text-shadow: 0 0 10px #ff00ff;
+    }
+    50% {
+      text-shadow: 0 0 20px #ff00ff;
+    }
+  }
+  .glitter-text {
+    animation: glitterSparkle 2s infinite;
+  }
+  

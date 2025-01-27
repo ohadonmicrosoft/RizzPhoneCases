@@ -2,39 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Register a new MyCase account" />
-  <meta name="keywords" content="register, account, phone case" />
-  <meta name="author" content="MyCase" />
+  <meta name="description" content="Rizz Register - Join the neon phone case revolution" />
+  <meta name="keywords" content="rizz, register, neon, glitter" />
+  <meta name="author" content="Rizz" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Phone Case Store - Register</title>
+  <title>Rizz - Register</title>
 
-  <!-- (Optional) Favicon -->
-  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
-
-  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Montserrat:wght@700&display=swap"
     rel="stylesheet"
   />
-  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/neon.css" />
 </head>
 <body>
-
-  <!-- Header -->
   <header class="header">
-    <div class="logo">MyCase</div>
+    <div class="logo neon-glow">Rizz</div>
     <div class="menu-toggle" id="openMenuBtn">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </header>
 
-  <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo">MyCase</div>
+      <div class="sidebar-logo neon-glow">Rizz</div>
       <div class="close-btn" id="closeMenuBtn">&#10005;</div>
     </div>
     <ul class="sidebar-nav">
@@ -42,6 +33,7 @@
       <li><a href="customizer.html">Customize</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="cart.html">Cart</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="register.html" class="active">Register</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -49,10 +41,9 @@
   </nav>
   <div class="overlay" id="overlay"></div>
 
-  <!-- Main Content -->
   <main class="main-content fade-in">
     <section class="auth-section">
-      <h1>Create an Account</h1>
+      <h1 class="neon-text">Create Your Rizz Account</h1>
       <form class="auth-form" id="registerForm">
         <label for="regName">Full Name</label>
         <input type="text" id="regName" required />
@@ -63,21 +54,19 @@
         <label for="regPassword">Password</label>
         <input type="password" id="regPassword" required />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="neon-btn">Sign Up</button>
       </form>
-      <p>
+      <p class="neon-text">
         Already have an account?
-        <a href="login.html">Login here</a>
+        <a href="login.html" class="glitter-text">Login here</a>
       </p>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 MyCase - All rights reserved.</p>
+  <footer class="footer neon-text">
+    <p>&copy; 2025 Rizz - Registration</p>
   </footer>
 
-  <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
 </body>

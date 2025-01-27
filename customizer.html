@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Advanced phone case customizer tool for MyCase" />
-  <meta name="keywords" content="customizer, phone case, design" />
-  <meta name="author" content="MyCase" />
+  <meta name="description" content="Rizz Customizer - 2D & 3D phone-case customization." />
+  <meta name="keywords" content="rizz, phone, customizer, 3D, neon" />
+  <meta name="author" content="Rizz" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Phone Case Store - Customizer</title>
-
-  <!-- (Optional) Favicon -->
-  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
+  <title>Rizz - Customizer</title>
 
   <!-- Google Fonts -->
   <link
@@ -18,15 +15,22 @@
   />
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Neon/Glitter CSS -->
+  <link rel="stylesheet" href="css/neon.css" />
 
-  <!-- Fabric.js -->
+  <!-- Fabric.js (2D Editor) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+  <!-- Three.js (3D Viewer) + GLTFLoader -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
+  <!-- Optional OrbitControls
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js"></script>
+  -->
 </head>
 <body>
-
   <!-- Header -->
   <header class="header">
-    <div class="logo">MyCase</div>
+    <div class="logo neon-glow">Rizz</div>
     <div class="menu-toggle" id="openMenuBtn">
       <span></span>
       <span></span>
@@ -37,7 +41,7 @@
   <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo">MyCase</div>
+      <div class="sidebar-logo neon-glow">Rizz</div>
       <div class="close-btn" id="closeMenuBtn">&#10005;</div>
     </div>
     <ul class="sidebar-nav">
@@ -45,6 +49,7 @@
       <li><a href="customizer.html" class="active">Customize</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="cart.html">Cart</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="register.html">Register</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -52,14 +57,12 @@
   </nav>
   <div class="overlay" id="overlay"></div>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <section class="customizer-section fade-in">
-      <h1>Customize Your Case</h1>
+  <main class="main-content fade-in">
+    <section class="customizer-section">
+      <h1 class="neon-text">Customize Your Case</h1>
 
-      <!-- Device Selection -->
-      <div class="device-selection">
-        <label for="device-model">Choose Device:</label>
+      <div class="device-selection neon-text">
+        <label for="device-model">Select Device:</label>
         <select id="device-model">
           <option value="iphone14">iPhone 14</option>
           <option value="iphone13">iPhone 13</option>
@@ -68,41 +71,47 @@
         </select>
       </div>
 
-      <!-- Canvas Container -->
-      <div class="canvas-container">
+      <!-- 2D Fabric.js Editor -->
+      <div class="twoD-section neon-card float-animation">
+        <h2 class="neon-text">2D Designer</h2>
         <canvas id="caseCanvas" width="300" height="600"></canvas>
+
+        <div class="customizer-controls">
+          <button id="uploadImageBtn">Upload Image</button>
+          <button id="addTextBtn">Add Text</button>
+          <input type="color" id="colorPicker" value="#ff0000" title="Pick Color" />
+          <button id="deleteObjBtn">Delete Selected</button>
+          <button id="clearCanvasBtn">Clear All</button>
+        </div>
+
+        <div class="extra-controls">
+          <button id="addRectBtn">Add Rect</button>
+          <button id="addCircleBtn">Add Circle</button>
+          <button id="changeCaseColorBtn">Canvas BG Color</button>
+        </div>
       </div>
 
-      <!-- Controls -->
-      <div class="customizer-controls">
-        <button id="uploadImageBtn">Upload Image</button>
-        <button id="addTextBtn">Add Text</button>
-        <input type="color" id="colorPicker" value="#ff0000" title="Choose color" />
-        <button id="deleteObjBtn">Delete Selected</button>
-        <button id="clearCanvasBtn">Clear All</button>
+      <!-- 3D Viewer -->
+      <div class="threeD-section neon-card float-animation">
+        <h2 class="neon-text">3D Preview</h2>
+        <div id="threeDContainer" style="width: 400px; height: 400px; margin: 0 auto;"></div>
+        <p class="neon-text">Spin & Zoom</p>
       </div>
 
-      <!-- Additional Shape Controls -->
-      <div class="extra-controls">
-        <button id="addRectBtn">Add Rectangle</button>
-        <button id="addCircleBtn">Add Circle</button>
-        <button id="changeCaseColorBtn">Case BG Color</button>
-      </div>
-
-      <!-- Add to Cart -->
       <div class="add-to-cart">
-        <button id="addToCartBtn">Add to Cart</button>
+        <button id="addToCartBtn" class="neon-btn">Add to Cart</button>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 MyCase - All rights reserved.</p>
+  <footer class="footer neon-text">
+    <p>&copy; 2025 Rizz - Customize in Style</p>
   </footer>
 
   <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/customizer.js"></script>
+  <script src="js/three-customizer.js"></script>
 </body>
 </html>

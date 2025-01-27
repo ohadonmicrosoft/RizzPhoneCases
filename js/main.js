@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
       alert(`Login attempt:\nEmail: ${email}\nPassword: ${password}`);
-      // Implement your real login logic here...
+      // Implement real authentication here...
     });
   }
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("regEmail").value;
       const password = document.getElementById("regPassword").value;
       alert(`Register attempt:\nName: ${name}\nEmail: ${email}`);
-      // Implement your real registration logic here...
+      // Implement real registration logic...
     });
   }
 
@@ -35,18 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
       alert(
         `Contact form submitted:\nName: ${contactName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`
       );
-      // Implement your actual contact form logic here...
+      // Real form submission logic...
     });
   }
 
-  // NEWSLETTER SUBSCRIPTION
+  // NEWSLETTER (if any .newsletter-form elements present)
   const newsletterForm = document.querySelector(".newsletter-form");
   if (newsletterForm) {
     newsletterForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const emailInput = newsletterForm.querySelector("input[type='email']");
-      alert(`Subscribed successfully with email: ${emailInput.value}`);
-      emailInput.value = "";
+      const emailField = newsletterForm.querySelector("input[type='email']");
+      alert(`Subscribed with: ${emailField.value}`);
+      emailField.value = "";
     });
   }
 });

@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Design and customize your phone case with ease. High-end graphics, advanced customization, and responsive design." />
-  <meta name="keywords" content="Phone case, custom case, design, high-quality printing" />
-  <meta name="author" content="MyCase" />
+  <meta name="description" content="Rizz - High-end phone case designs, neon glitters, and 3D previews." />
+  <meta name="keywords" content="rizz, phone cases, neon, glitter, 3D" />
+  <meta name="author" content="Rizz" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Phone Case Store - Home</title>
-
-  <!-- Favicon (optional) -->
+  <title>Rizz - Home</title>
+  <!-- (Optional) Favicon -->
   <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
 
   <!-- Google Fonts -->
@@ -18,12 +17,13 @@
   />
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Neon/Glitter CSS -->
+  <link rel="stylesheet" href="css/neon.css" />
 </head>
 <body>
-
   <!-- Header -->
   <header class="header">
-    <div class="logo">MyCase</div>
+    <div class="logo neon-glow">Rizz</div>
     <div class="menu-toggle" id="openMenuBtn">
       <span></span>
       <span></span>
@@ -31,10 +31,10 @@
     </div>
   </header>
 
-  <!-- Sidebar (Off-Canvas Navigation) -->
+  <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo">MyCase</div>
+      <div class="sidebar-logo neon-glow">Rizz</div>
       <div class="close-btn" id="closeMenuBtn">&#10005;</div>
     </div>
     <ul class="sidebar-nav">
@@ -42,6 +42,7 @@
       <li><a href="customizer.html">Customize</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="cart.html">Cart</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="register.html">Register</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -51,83 +52,56 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('assets/images/hero-bg.jpg');">
-      <div class="hero-overlay"></div>
-      <div class="hero-content fade-in">
-        <h1>Unleash Your Creativity</h1>
-        <p>Create a custom phone case that truly reflects your style.</p>
-        <a href="customizer.html" class="cta-button">Start Designing</a>
+
+    <!-- Neon/Glitter Hero Section -->
+    <section class="parallax-hero" style="background-image: url('assets/images/neon-hero-bg.jpg');">
+      <div class="parallax-overlay"></div>
+      <div class="hero-content fade-in neon-text">
+        <h1>Shine & Spark</h1>
+        <p>Elevate your style with Rizz's premium, glittery phone cases.</p>
+        <a href="customizer.html" class="cta-button neon-btn">Start Designing</a>
       </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="video-demo-section fade-in">
+      <h2 class="section-title neon-text">3D Experience</h2>
+      <div class="video-container floating-animation">
+        <video width="700" controls poster="assets/images/phone-case-3d-screenshot.png">
+          <source src="assets/videos/phone-case-demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="neon-text">Preview your designs in 3D, add neon glows, and more!</p>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section fade-in">
-      <h2 class="section-title">What We Offer</h2>
+    <section class="features-section neon-cards fade-in">
+      <h2 class="section-title neon-text">Our Highlights</h2>
       <div class="features-grid">
-        <div class="feature-box">
-          <img src="assets/images/placeholder-case.png" alt="Unique Designs" />
-          <h3>Unique Designs</h3>
-          <p>Choose from a wide range of modern templates or create your own.</p>
+        <div class="feature-box neon-card float-animation">
+          <h3>Neon Spark</h3>
+          <p>Amplify your phone’s look with vibrant neon designs and premium finishes.</p>
         </div>
-        <div class="feature-box">
-          <img src="assets/images/placeholder-case.png" alt="Easy UI" />
-          <h3>Easy Interface</h3>
-          <p>Drag-and-drop, add text, and fine-tune every detail seamlessly.</p>
+        <div class="feature-box neon-card float-animation">
+          <h3>3D Rotations</h3>
+          <p>Spin, zoom, and truly visualize your next-level phone case in real time.</p>
         </div>
-        <div class="feature-box">
-          <img src="assets/images/placeholder-case.png" alt="Premium Quality" />
-          <h3>Premium Quality</h3>
-          <p>We use top-notch materials and printing for a vibrant, durable finish.</p>
+        <div class="feature-box neon-card float-animation">
+          <h3>Glitter Effects</h3>
+          <p>Choose glitter overlays or metallic touches for an eye-catching twist.</p>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section fade-in" style="background-image: url('assets/images/testimonials-bg.jpg');">
-      <div class="testimonials-overlay"></div>
-      <div class="testimonials-content">
-        <h2 class="section-title">Our Happy Customers</h2>
-        <div class="testimonials-grid">
-          <article class="testimonial">
-            <p class="testimonial-text">
-              "I've never seen my designs look so beautiful on a phone case. Highly recommended!"
-            </p>
-            <p class="testimonial-author">- Alex P.</p>
-          </article>
-          <article class="testimonial">
-            <p class="testimonial-text">
-              "The customizer tool was so easy to use. My new phone case looks amazing."
-            </p>
-            <p class="testimonial-author">- Sarah W.</p>
-          </article>
-          <article class="testimonial">
-            <p class="testimonial-text">
-              "Fast shipping, great quality, and a unique design. I'm totally impressed."
-            </p>
-            <p class="testimonial-author">- Rachel L.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter Subscription Section -->
-    <section class="newsletter-section fade-in">
-      <h2 class="section-title">Stay in Touch</h2>
-      <p>Subscribe to our newsletter for exclusive deals and design tips.</p>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Enter your email" />
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 MyCase - All rights reserved.</p>
+  <footer class="footer neon-text">
+    <p>&copy; 2025 Rizz - All rights reserved.</p>
   </footer>
 
-  <!-- JS Scripts -->
+  <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
 </body>

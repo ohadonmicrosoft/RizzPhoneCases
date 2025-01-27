@@ -2,7 +2,7 @@ let canvas;
 document.addEventListener("DOMContentLoaded", () => {
   canvas = new fabric.Canvas("caseCanvas");
 
-  // Function to set canvas size based on selected device
+  // Set canvas size based on the selected device
   const deviceModelSelect = document.getElementById("device-model");
   function updateCanvasSize(device) {
     switch (device) {
@@ -34,12 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     deviceModelSelect.addEventListener("change", (e) => {
       updateCanvasSize(e.target.value);
     });
+    // Initialize default
+    updateCanvasSize(deviceModelSelect.value);
   }
 
-  // Initialize default device
-  updateCanvasSize(deviceModelSelect.value);
-
-  // Upload image
+  // Upload Image
   const uploadImageBtn = document.getElementById("uploadImageBtn");
   if (uploadImageBtn) {
     uploadImageBtn.addEventListener("click", () => {
@@ -63,16 +62,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add text
+  // Add Text
   const addTextBtn = document.getElementById("addTextBtn");
   if (addTextBtn) {
     addTextBtn.addEventListener("click", () => {
       const text = new fabric.Text("Your Text", {
         left: 50,
         top: 50,
-        fill: "#000",
+        fill: "#fff",
         fontFamily: "Rubik",
-        fontSize: 22,
+        fontSize: 24,
       });
       canvas.add(text);
       canvas.setActiveObject(text);
@@ -80,19 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Color picker (for text or shapes)
+  // Color Picker
   const colorPicker = document.getElementById("colorPicker");
   if (colorPicker) {
     colorPicker.addEventListener("change", (e) => {
       const activeObj = canvas.getActiveObject();
-      if (activeObj && (activeObj.type === "text" || activeObj.type === "rect" || activeObj.type === "circle" || activeObj.type === "path")) {
+      if (activeObj && (activeObj.type === "text" || activeObj.type === "rect" || activeObj.type === "circle" || activeObj.type === "path" || activeObj.type === "image")) {
         activeObj.set("fill", e.target.value);
         canvas.renderAll();
       }
     });
   }
 
-  // Delete selected object
+  // Delete Selected
   const deleteObjBtn = document.getElementById("deleteObjBtn");
   if (deleteObjBtn) {
     deleteObjBtn.addEventListener("click", () => {
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Clear canvas
+  // Clear Canvas
   const clearCanvasBtn = document.getElementById("clearCanvasBtn");
   if (clearCanvasBtn) {
     clearCanvasBtn.addEventListener("click", () => {
@@ -112,14 +111,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add rectangle
+  // Add Rectangle
   const addRectBtn = document.getElementById("addRectBtn");
   if (addRectBtn) {
     addRectBtn.addEventListener("click", () => {
       const rect = new fabric.Rect({
         left: 100,
         top: 100,
-        fill: "rgba(255,0,0,0.5)",
+        fill: "rgba(255,0,255,0.5)",
         width: 100,
         height: 100,
       });
@@ -129,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add circle
+  // Add Circle
   const addCircleBtn = document.getElementById("addCircleBtn");
   if (addCircleBtn) {
     addCircleBtn.addEventListener("click", () => {
@@ -137,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         left: 150,
         top: 150,
         radius: 50,
-        fill: "rgba(0,0,255,0.5)",
+        fill: "rgba(255,0,255,0.5)",
       });
       canvas.add(circle);
       canvas.setActiveObject(circle);
@@ -145,13 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Change case background color
+  // Change Case Background Color
   const changeCaseColorBtn = document.getElementById("changeCaseColorBtn");
   if (changeCaseColorBtn) {
     changeCaseColorBtn.addEventListener("click", () => {
-      const bgColor = prompt("Enter a hex color code (e.g. #ffffff) or color name:");
-      if (bgColor) {
-        canvas.setBackgroundColor(bgColor, () => canvas.renderAll());
+      const color = prompt("Enter a background color (e.g. #000 or 'blue'):");
+      if (color) {
+        canvas.setBackgroundColor(color, () => canvas.renderAll());
       }
     });
   }
@@ -160,13 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const addToCartBtn = document.getElementById("addToCartBtn");
   if (addToCartBtn) {
     addToCartBtn.addEventListener("click", () => {
-      // Convert canvas to data URL for saving or sending to cart
-      const designDataURL = canvas.toDataURL({
-        format: "png",
-        quality: 1.0,
-      });
-      alert("Design added to cart! (Placeholder action)");
-      // In a real app, you'd send designDataURL to your server/cart logic
+      const designDataURL = canvas.toDataURL({ format: "png", quality: 1.0 });
+      alert("Design added to cart! (Placeholder)");
+      // Send designDataURL to backend or localStorage if needed.
     });
   }
 });
