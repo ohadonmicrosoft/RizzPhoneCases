@@ -9,8 +9,9 @@
   <title>Rizz | The Future of Phone Customization</title>
 
   <!-- Google Fonts -->
+  <!-- Nunito (לגוף הטקסט) + Pacifico (ללוגו) -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
     rel="stylesheet"
   />
 
@@ -20,19 +21,18 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/font.css" />
-  <link rel="stylesheet" href="css/neon.css" />
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
+  <header class="site-header">
     <div class="container header-container">
       <div class="logo">
-        <a href="index.html" class="neon-logo">Rizz</a>
+        <!-- לוגו מעוצב בטיפוגרפיה Pacifico -->
+        <a href="index.html" class="rizz-logo">Rizz</a>
       </div>
-      <nav class="nav">
+      <nav class="nav-bar">
         <ul class="nav-list">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="customizer.html">Customize</a></li>
@@ -47,84 +47,75 @@
         <span></span><span></span><span></span>
       </div>
     </div>
+    <div id="overlay" class="overlay"></div>
   </header>
 
-  <!-- OVERLAY (For mobile menu) -->
-  <div id="overlay" class="overlay"></div>
-
   <!-- HERO SECTION -->
-  <section class="hero hero-home">
+  <section class="hero home-hero">
+    <!-- רקע גרפי: gradient + צורות דקורטיביות -->
+    <div class="hero-bg">
+      <img src="assets/images/wave-bg.svg" alt="Wave background" class="hero-wave"/>
+    </div>
     <div class="container hero-content">
       <div class="hero-text">
-        <h1 class="hero-title">
-          <span class="gradient-text">Transform Your Phone</span><br />
-          with <span class="neon-highlight">3D Wraps</span>
-        </h1>
-        <p class="hero-description">
-          Custom phone wraps that redefine style and functionality. Design your
-          way.
+        <h1 class="hero-title">Transform Your Phone <br/> <span>with 3D Wraps</span></h1>
+        <p class="hero-subtitle">
+          Custom phone wraps that redefine style and functionality. <br/>Design your way.
         </p>
         <a href="customizer.html" class="btn btn-primary hero-cta">Start Customizing</a>
       </div>
       <div class="hero-image">
-        <!-- Example image -->
-        <img
-          src="assets/images/hero-phone.png"
-          alt="3D Phone Wrap"
-          class="fade-in"
-        />
+        <img src="assets/images/hero-phone.png" alt="3D Phone Wrap" />
       </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll Down</span>
-      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
   <!-- FEATURES SECTION -->
-  <section class="features">
+  <section class="features-section">
     <div class="container">
-      <h2 class="section-title">
-        Why Choose <span class="neon-highlight">Rizz?</span>
-      </h2>
+      <h2 class="section-title">Why Choose <span class="highlight">Rizz?</span></h2>
+      <p class="section-intro">
+        We bring you the next level of phone customization with vibrant designs, <br/>
+        advanced tools, and a user-friendly experience.
+      </p>
       <div class="features-grid">
-        <div class="feature-card float-animation">
-          <i class="fas fa-mobile-alt icon"></i>
+        <div class="feature-item">
+          <i class="fas fa-mobile-screen-button icon"></i>
           <h3>Immersive 3D Wraps</h3>
           <p>Get full edge-to-edge designs that truly transform your phone.</p>
         </div>
-        <div class="feature-card float-animation">
+        <div class="feature-item">
           <i class="fas fa-palette icon"></i>
           <h3>Endless Customization</h3>
           <p>Unleash your creativity with advanced design tools and templates.</p>
         </div>
-        <div class="feature-card float-animation">
-          <i class="fas fa-shield-alt icon"></i>
+        <div class="feature-item">
+          <i class="fas fa-shield-halved icon"></i>
           <h3>Durable Materials</h3>
           <p>Built for both style and protection, with premium materials.</p>
         </div>
-        <div class="feature-card float-animation">
-          <i class="fas fa-leaf icon"></i>
+        <div class="feature-item">
+          <i class="fas fa-seedling icon"></i>
           <h3>Eco-Friendly</h3>
-          <p>We are committed to sustainability and recyclable materials.</p>
+          <p>We care about sustainability, using recyclable materials.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SHOWCASE SECTION -->
-  <section class="showcase">
-    <div class="container showcase-content">
+  <section class="showcase-section">
+    <div class="container showcase-grid">
       <div class="showcase-text">
-        <h2>Experience the Difference</h2>
-        <p>
-          See your designs come to life in real-time with our 3D viewer. From every angle, your phone will shine.
+        <h2 class="section-title">Experience the Difference</h2>
+        <p class="section-intro">
+          See your designs come to life in real-time with our 3D viewer. 
+          From every angle, your phone will shine.
         </p>
         <a href="gallery.html" class="btn btn-secondary">Explore Gallery</a>
       </div>
-      <div class="showcase-video">
-        <!-- Example video -->
-        <video autoplay muted loop playsinline>
+      <div class="showcase-video-wrapper">
+        <video autoplay muted loop playsinline class="showcase-video">
           <source src="assets/videos/showcase.mp4" type="video/mp4" />
         </video>
       </div>
@@ -132,40 +123,39 @@
   </section>
 
   <!-- TESTIMONIALS SECTION -->
-  <section class="testimonials">
+  <section class="testimonials-section">
     <div class="container">
       <h2 class="section-title">What Our Customers Say</h2>
       <div class="testimonials-slider">
         <div class="testimonial">
-          <p>
-            "Rizz transformed my phone into a unique piece of art. Absolutely love
-            it!"
-          </p>
-          <h4>- Sarah K.</h4>
+          <div class="testimonial-content">
+            <p>
+              "Rizz transformed my phone into a unique piece of art. Absolutely love it!"
+            </p>
+          </div>
+          <h4 class="testimonial-author">- Sarah K.</h4>
         </div>
         <div class="testimonial">
-          <p>
-            "The customization process was so easy, and the results are
-            stunning."
-          </p>
-          <h4>- Mark L.</h4>
+          <div class="testimonial-content">
+            <p>"The customization process was so easy, and the results are stunning."</p>
+          </div>
+          <h4 class="testimonial-author">- Mark L.</h4>
         </div>
         <div class="testimonial">
-          <p>
-            "I get compliments on my phone case all the time. Highly
-            recommended!"
-          </p>
-          <h4>- Emily R.</h4>
+          <div class="testimonial-content">
+            <p>"I get compliments on my phone case all the time. Highly recommended!"</p>
+          </div>
+          <h4 class="testimonial-author">- Emily R.</h4>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-logo">
-        <a href="index.html" class="neon-logo">Rizz</a>
+        <a href="index.html" class="rizz-logo">Rizz</a>
       </div>
       <ul class="footer-nav">
         <li><a href="index.html">Home</a></li>
@@ -175,11 +165,13 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="cart.html">Cart</a></li>
       </ul>
-      <p class="footer-text">&copy; 2025 Rizz. All Rights Reserved.</p>
+      <p class="copyright">
+        &copy; 2025 Rizz. All Rights Reserved.
+      </p>
     </div>
   </footer>
 
-  <!-- JS SCRIPTS -->
+  <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -11,29 +11,29 @@
   <meta name="author" content="Rizz" />
   <title>Rizz | Gallery</title>
 
-  <!-- Google Fonts & Font Awesome -->
+  <!-- Google Fonts (Nunito & Pacifico) -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/font.css" />
-  <link rel="stylesheet" href="css/neon.css" />
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
+  <header class="site-header">
     <div class="container header-container">
       <div class="logo">
-        <a href="index.html" class="neon-logo">Rizz</a>
+        <a href="index.html" class="rizz-logo">Rizz</a>
       </div>
-      <nav class="nav">
+      <nav class="nav-bar">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="customizer.html">Customize</a></li>
@@ -48,139 +48,95 @@
         <span></span><span></span><span></span>
       </div>
     </div>
+    <div id="overlay" class="overlay"></div>
   </header>
 
-  <!-- OVERLAY -->
-  <div id="overlay" class="overlay"></div>
-
   <!-- HERO SECTION -->
-  <section class="hero hero-gallery">
-    <div class="container">
-      <h1 class="hero-title">
-        <span class="gradient-text">Inspiration Awaits</span><br />
-        <span class="neon-highlight">Explore Our Gallery</span>
-      </h1>
-      <p class="hero-description">
-        Discover stunning 3D phone wrap designs created with Rizz. Let your imagination flow.
-      </p>
+  <section class="hero generic-hero">
+    <div class="hero-bg">
+      <img src="assets/images/wave-bg.svg" alt="Wave background" class="hero-wave"/>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-text hero-centered">
+        <h1 class="hero-title">Inspiration Awaits <br/><span>Explore Our Gallery</span></h1>
+        <p class="hero-subtitle">
+          Discover stunning 3D phone wrap designs created with Rizz. <br/>
+          Let your imagination flow.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- GALLERY SECTION -->
-  <section class="gallery-section">
-    <div class="container">
-      <h2 class="section-title neon-text">Featured Designs</h2>
-      <p class="section-description">
-        Browse through a curated collection of 3D wrap designs crafted by our talented community of creators.
-      </p>
+  <section class="gallery-section container">
+    <h2 class="section-title">Featured Designs</h2>
+    <p class="section-intro">
+      Browse through a curated collection of 3D wrap designs crafted by our talented community of creators.
+    </p>
 
-      <div class="gallery-grid">
-        <!-- Gallery Item 1 -->
-        <div class="gallery-item">
-          <img
-            src="assets/images/gallery-1.jpg"
-            alt="Design 1"
-            class="gallery-image"
-          />
-          <div class="gallery-overlay">
-            <h3 class="gallery-title">Bold & Vibrant</h3>
-            <p class="gallery-description">
-              A colorful explosion of creativity that wraps every edge.
-            </p>
-          </div>
-        </div>
-        <!-- Gallery Item 2 -->
-        <div class="gallery-item">
-          <img
-            src="assets/images/gallery-2.jpg"
-            alt="Design 2"
-            class="gallery-image"
-          />
-          <div class="gallery-overlay">
-            <h3 class="gallery-title">Minimal & Elegant</h3>
-            <p class="gallery-description">
-              Simplicity meets sophistication with clean, modern designs.
-            </p>
-          </div>
-        </div>
-        <!-- Gallery Item 3 -->
-        <div class="gallery-item">
-          <img
-            src="assets/images/gallery-3.jpg"
-            alt="Design 3"
-            class="gallery-image"
-          />
-          <div class="gallery-overlay">
-            <h3 class="gallery-title">Nature Inspired</h3>
-            <p class="gallery-description">
-              Bring the beauty of nature to your hands with earthy tones.
-            </p>
-          </div>
-        </div>
-        <!-- Gallery Item 4 -->
-        <div class="gallery-item">
-          <img
-            src="assets/images/gallery-4.jpg"
-            alt="Design 4"
-            class="gallery-image"
-          />
-          <div class="gallery-overlay">
-            <h3 class="gallery-title">Futuristic</h3>
-            <p class="gallery-description">
-              Step into the future with designs that push the boundaries of technology.
-            </p>
-          </div>
+    <div class="gallery-grid">
+      <!-- Gallery Item 1 -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery-1.jpg" alt="Design 1" class="gallery-image"/>
+        <div class="gallery-overlay">
+          <h3 class="gallery-title">Bold & Vibrant</h3>
+          <p class="gallery-description">
+            A colorful explosion of creativity that wraps every edge.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- WHY CHOOSE SECTION -->
-  <section class="why-choose-section">
-    <div class="container">
-      <h2 class="section-title neon-text">Why Rizz?</h2>
-      <div class="why-choose-grid">
-        <div class="reason-item">
-          <i class="fas fa-cube icon"></i>
-          <h3>3D Customization</h3>
-          <p>
-            Take your phone wraps to the next level with full 3D designs wrapping every edge and corner.
+      <!-- Gallery Item 2 -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery-2.jpg" alt="Design 2" class="gallery-image"/>
+        <div class="gallery-overlay">
+          <h3 class="gallery-title">Minimal & Elegant</h3>
+          <p class="gallery-description">
+            Simplicity meets sophistication with clean, modern lines.
           </p>
         </div>
-        <div class="reason-item">
-          <i class="fas fa-users icon"></i>
-          <h3>Community Creations</h3>
-          <p>
-            Join a growing community of creators and get inspired by their unique designs.
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery-3.jpg" alt="Design 3" class="gallery-image"/>
+        <div class="gallery-overlay">
+          <h3 class="gallery-title">Nature Inspired</h3>
+          <p class="gallery-description">
+            Bring the beauty of nature to your hands with earthy tones.
           </p>
         </div>
-        <div class="reason-item">
-          <i class="fas fa-leaf icon"></i>
-          <h3>Eco-Friendly</h3>
-          <p>
-            We’re committed to sustainability with eco-friendly materials and processes.
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="gallery-item">
+        <img src="assets/images/gallery-4.jpg" alt="Design 4" class="gallery-image"/>
+        <div class="gallery-overlay">
+          <h3 class="gallery-title">Futuristic</h3>
+          <p class="gallery-description">
+            Step into the future with designs that push boundaries.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
-  <section class="cta-section">
-    <div class="container">
-      <h2 class="cta-title neon-text">Inspired? Create Your Own Wrap Today</h2>
-      <p>
-        Unleash your creativity with Rizz's advanced customization tools and bring your ideas to life.
-      </p>
+  <!-- CTA SECTION -->
+  <section class="container" style="padding: 50px 0;">
+    <h2 class="section-title">Inspired? Create Your Own Wrap Today</h2>
+    <p class="section-intro">
+      Unleash your creativity with Rizz's advanced customization tools and bring your ideas to life.
+    </p>
+    <div style="text-align: center; margin-top: 30px;">
       <a href="customizer.html" class="btn btn-primary">Start Designing</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-logo">
-        <a href="index.html" class="neon-logo">Rizz</a>
+        <a href="index.html" class="rizz-logo">Rizz</a>
       </div>
       <ul class="footer-nav">
         <li><a href="index.html">Home</a></li>
@@ -190,7 +146,9 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="cart.html">Cart</a></li>
       </ul>
-      <p class="footer-text">&copy; 2025 Rizz. All Rights Reserved.</p>
+      <p class="copyright">
+        &copy; 2025 Rizz. All Rights Reserved.
+      </p>
     </div>
   </footer>
 
