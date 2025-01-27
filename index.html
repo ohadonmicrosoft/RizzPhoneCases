@@ -1,12 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizz Phone Cases</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="description" content="Design and customize your phone case with ease. High-end graphics, advanced customization, and responsive design." />
+  <meta name="keywords" content="Phone case, custom case, design, high-quality printing" />
+  <meta name="author" content="MyCase" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Phone Case Store - Home</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Montserrat:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="src/css/style.css" />
 </head>
 <body>
-    <!-- ...existing code... -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MyCase</div>
+    <div class="menu-toggle" id="openMenuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Sidebar (Off-Canvas Navigation) -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">MyCase</div>
+      <div class="close-btn" id="closeMenuBtn">&#10005;</div>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="customizer.html">Customize</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay for Sidebar -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: url('assets/images/hero-bg.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content fade-in">
+        <h1>Unleash Your Creativity</h1>
+        <p>Create a custom phone case that truly reflects your style.</p>
+        <a href="customizer.html" class="cta-button">Start Designing</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section fade-in">
+      <h2 class="section-title">What We Offer</h2>
+      <div class="features-grid">
+        <div class="feature-box">
+          <img src="assets/images/placeholder-case.png" alt="Unique Designs" />
+          <h3>Unique Designs</h3>
+          <p>Choose from a wide range of modern templates or create your own.</p>
+        </div>
+        <div class="feature-box">
+          <img src="assets/images/placeholder-case.png" alt="Easy UI" />
+          <h3>Easy Interface</h3>
+          <p>Drag-and-drop, add text, and fine-tune every detail seamlessly.</p>
+        </div>
+        <div class="feature-box">
+          <img src="assets/images/placeholder-case.png" alt="Premium Quality" />
+          <h3>Premium Quality</h3>
+          <p>We use top-notch materials and printing for a vibrant, durable finish.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section fade-in" style="background-image: url('assets/images/testimonials-bg.jpg');">
+      <div class="testimonials-overlay"></div>
+      <div class="testimonials-content">
+        <h2 class="section-title">Our Happy Customers</h2>
+        <div class="testimonials-grid">
+
+          <article class="testimonial">
+            <p class="testimonial-text">
+              "I've never seen my designs look so beautiful on a phone case. Highly recommended!"
+            </p>
+            <p class="testimonial-author">- Alex P.</p>
+          </article>
+
+          <article class="testimonial">
+            <p class="testimonial-text">
+              "The customizer tool was so easy to use. My new phone case looks amazing."
+            </p>
+            <p class="testimonial-author">- Sarah W.</p>
+          </article>
+
+          <article class="testimonial">
+            <p class="testimonial-text">
+              "Fast shipping, great quality, and a unique design. I'm totally impressed."
+            </p>
+            <p class="testimonial-author">- Rachel L.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section fade-in">
+      <h2 class="section-title">Stay in Touch</h2>
+      <p>Subscribe to our newsletter for exclusive deals and design tips.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 MyCase - All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/js/menu.js"></script>
+  <script src="src/js/main.js"></script>
 </body>
 </html>

@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="description" content="View and manage your cart items" />
+  <meta name="keywords" content="cart, shopping, phone case" />
+  <meta name="author" content="MyCase" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Phone Case Store - Cart</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Montserrat:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="src/css/style.css" />
 </head>
 <body>
-    <!-- ...existing code... -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MyCase</div>
+    <div class="menu-toggle" id="openMenuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">MyCase</div>
+      <div class="close-btn" id="closeMenuBtn">&#10005;</div>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="customizer.html">Customize</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="cart.html" class="active">Cart</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Main Content -->
+  <main class="main-content fade-in">
+    <section class="cart-section">
+      <h1>Your Shopping Cart</h1>
+
+      <div class="cart-items">
+        <!-- Example item - static for demonstration -->
+        <div class="cart-item">
+          <div class="cart-item-image">
+            <img src="assets/images/placeholder-case.png" alt="Case Preview" />
+          </div>
+          <div class="cart-item-info">
+            <h2>iPhone 14 Custom Case</h2>
+            <p>Quantity: 1</p>
+            <p>Price: $29.99</p>
+          </div>
+          <div class="cart-item-actions">
+            <button class="remove-item-btn">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <h2>Subtotal: $29.99</h2>
+        <p>Shipping: $5.00</p>
+        <p><strong>Total: $34.99</strong></p>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 MyCase - All rights reserved.</p>
+  </footer>
+
+  <script src="src/js/menu.js"></script>
+  <script src="src/js/main.js"></script>
 </body>
 </html>

@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customizer</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="description" content="Advanced phone case customizer tool for MyCase" />
+  <meta name="keywords" content="customizer, phone case, design" />
+  <meta name="author" content="MyCase" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Phone Case Store - Customizer</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Montserrat:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="src/css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
 </head>
 <body>
-    <!-- ...existing code... -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MyCase</div>
+    <div class="menu-toggle" id="openMenuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">MyCase</div>
+      <div class="close-btn" id="closeMenuBtn">&#10005;</div>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="customizer.html" class="active">Customize</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <section class="customizer-section fade-in">
+      <h1>Customize Your Case</h1>
+
+      <!-- Device Selection -->
+      <div class="device-selection">
+        <label for="device-model">Choose Device:</label>
+        <select id="device-model">
+          <option value="iphone14">iPhone 14</option>
+          <option value="iphone13">iPhone 13</option>
+          <option value="samsungS22">Samsung S22</option>
+          <option value="pixel7">Pixel 7</option>
+        </select>
+      </div>
+
+      <!-- Canvas Container -->
+      <div class="canvas-container">
+        <canvas id="caseCanvas" width="300" height="600"></canvas>
+      </div>
+
+      <!-- Controls -->
+      <div class="customizer-controls">
+        <button id="uploadImageBtn">Upload Image</button>
+        <button id="addTextBtn">Add Text</button>
+        <input type="color" id="colorPicker" value="#ff0000" title="Choose color" />
+        <button id="deleteObjBtn">Delete Selected</button>
+        <button id="clearCanvasBtn">Clear All</button>
+      </div>
+
+      <!-- Additional Shape Controls -->
+      <div class="extra-controls">
+        <button id="addRectBtn">Add Rectangle</button>
+        <button id="addCircleBtn">Add Circle</button>
+        <button id="changeCaseColorBtn">Case BG Color</button>
+      </div>
+
+      <!-- Add to Cart -->
+      <div class="add-to-cart">
+        <button id="addToCartBtn">Add to Cart</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 MyCase - All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/js/menu.js"></script>
+  <script src="src/js/customizer.js"></script>
 </body>
 </html>
