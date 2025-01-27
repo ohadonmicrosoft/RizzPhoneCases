@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Rizz 3D & 2D Customizer - wrap phone designs around every edge." />
-  <meta name="keywords" content="Rizz, phone customizer, 3D wrap, neon" />
+  <meta name="description" content="Rizz 3D & 2D phone-wrap customizer (darker teal neon theme)" />
+  <meta name="keywords" content="Rizz, phone, wrap, neon teal, customizer" />
   <meta name="author" content="Rizz" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rizz - Customize</title>
@@ -20,9 +20,9 @@
   <!-- Fonts CSS -->
   <link rel="stylesheet" href="css/fonts.css" />
 
-  <!-- Fabric.js for 2D Editor -->
+  <!-- Fabric.js (2D Editor) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
-  <!-- Three.js for 3D Preview -->
+  <!-- Three.js (for 3D) + GLTFLoader -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
@@ -46,6 +46,7 @@
       <li><a href="customizer.html" class="active">Customize</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="cart.html">Cart</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="register.html">Register</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -56,26 +57,22 @@
   <main class="main-content fade-in">
     <section class="customizer-section">
       <h1 class="neon-text">Customize Your Rizz Case</h1>
-      <p class="neon-text">Our tech wraps your design around all edges. See it in 3D!</p>
+      <p class="neon-text">Wrap your design around edges with our advanced 2D+3D tools.</p>
 
-      <!-- 2D Editor Area -->
+      <!-- 2D Editor -->
       <div class="twoD-section neon-card float-animation">
         <h2 class="neon-text">2D Editor</h2>
-
-        <!-- Device Model Selection (optional) -->
         <div class="device-selection neon-text">
-          <label for="device-model">Choose Phone Model:</label>
+          <label for="device-model">Phone Model:</label>
           <select id="device-model">
             <option value="iphone14.png">iPhone 14</option>
             <option value="iphone14promax.png">iPhone 14 Pro Max</option>
             <option value="samsungS22.png">Samsung S22</option>
             <option value="samsungS21.png">Samsung S21</option>
-            <!-- More as needed -->
           </select>
         </div>
 
         <canvas id="caseCanvas" width="300" height="600" style="background-color: #222;"></canvas>
-
         <div class="customizer-controls">
           <button id="uploadImageBtn">Upload Image</button>
           <button id="addTextBtn">Add Text</button>
@@ -85,7 +82,7 @@
             <option value="Arial">Arial</option>
             <option value="Courier New">Courier</option>
           </select>
-          <input type="color" id="colorPicker" value="#00ffe0" />
+          <input type="color" id="colorPicker" value="#00ccaa" />
         </div>
 
         <div class="extra-controls">
@@ -93,18 +90,17 @@
           <button id="addCircleBtn">Circle</button>
           <button id="addTriangleBtn">Triangle</button>
           <button id="addStarBtn">Star</button>
-          <button id="deleteObjBtn">Delete Selected</button>
+          <button id="deleteObjBtn">Delete</button>
           <button id="clearCanvasBtn">Clear All</button>
           <button id="changeCaseColorBtn">Canvas BG</button>
         </div>
 
-        <!-- Advanced Options -->
         <div class="advanced-controls">
           <h3 class="neon-text">Advanced Styles</h3>
           <div style="margin-bottom: 10px;">
-            <label>Gradient Start: <input type="color" id="gradColor1" value="#00ffe0" /></label>
+            <label>Gradient Start: <input type="color" id="gradColor1" value="#00ccaa" /></label>
             <label>Gradient End: <input type="color" id="gradColor2" value="#ffffff" /></label>
-            <button id="applyGradientBtn">Apply Gradient</button>
+            <button id="applyGradientBtn">Gradient</button>
           </div>
           <div style="margin-bottom: 10px;">
             <h4 style="margin: 10px 0;">Shadow</h4>
@@ -112,14 +108,14 @@
             <label>Y Offset: <input type="number" id="shadowY" value="5" style="width:50px;" /></label>
             <label>Blur: <input type="number" id="shadowBlur" value="5" style="width:50px;" /></label>
             <label>Color: <input type="color" id="shadowColor" value="#000000" /></label>
-            <button id="applyShadowBtn">Apply Shadow</button>
+            <button id="applyShadowBtn">Shadow</button>
           </div>
           <div style="margin-bottom: 10px;">
             <button id="saveDesignBtn">Save Design</button>
             <button id="loadDesignBtn">Load Design</button>
           </div>
           <div>
-            <button id="sync3DTextureBtn" class="neon-btn">Sync with 3D Model</button>
+            <button id="sync3DTextureBtn" class="neon-btn">Sync with 3D</button>
           </div>
         </div>
       </div>
@@ -127,11 +123,10 @@
       <!-- 3D Viewer -->
       <div class="threeD-section neon-card float-animation">
         <h2 class="neon-text">3D Preview</h2>
-        <p class="neon-text" style="margin-bottom: 10px;">Rotate & Zoom. Notice how the design covers edges, not just the back!</p>
+        <p class="neon-text">Rotate & Zoom. Wrap across edges in real-time!</p>
         <div id="threeDContainer" style="width: 400px; height: 400px; margin: 0 auto;"></div>
       </div>
 
-      <!-- Add to Cart -->
       <div class="add-to-cart">
         <button id="addToCartBtn" class="neon-btn">Add to Cart</button>
       </div>
@@ -142,7 +137,6 @@
     <p>&copy; 2025 Rizz - 3D Phone Wrap Customizer</p>
   </footer>
 
-  <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/customizer.js"></script>
   <script src="js/three-customizer.js"></script>

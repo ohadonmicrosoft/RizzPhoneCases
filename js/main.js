@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
       alert(`Login attempt:\nEmail: ${email}\nPassword: ${password}`);
-      // Real authentication logic here...
     });
   }
 
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("regEmail").value;
       const password = document.getElementById("regPassword").value;
       alert(`Register attempt:\nName: ${name}\nEmail: ${email}`);
-      // Real registration logic here...
     });
   }
 
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert(
         `Contact form submitted:\nName: ${contactName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`
       );
-      // Real contact logic here...
     });
   }
 });

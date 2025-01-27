@@ -1,8 +1,4 @@
-/* 
-  style.css - Rizz Full 3D Wrap Theme (Black & Turquoise)
--------------------------------------------------------- */
-
-/* RESET + GLOBAL */
+/* style.css - Rizz with darker teal neon (#00ccaa) */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +8,7 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  background-color: #0b0b0b;
+  background-color: #0c0c0c;
   color: #fff;
   overflow-x: hidden;
 }
@@ -24,8 +20,8 @@ html, body {
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #0f0f0f;
-  border-bottom: 1px solid #111;
+  background-color: #111;
+  border-bottom: 1px solid #222;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +35,7 @@ html, body {
 .menu-toggle {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   cursor: pointer;
 }
 .menu-toggle span {
@@ -91,7 +87,7 @@ html, body {
 }
 .sidebar-nav li a:hover,
 .sidebar-nav li a.active {
-  background-color: #111;
+  background-color: #222;
 }
 .sidebar.open {
   left: 0;
@@ -161,33 +157,25 @@ html, body {
   transition: 0.3s;
 }
 
-/* FADE IN */
+/* ANIMATIONS */
 .fade-in {
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
 }
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-
-/* FLOAT ANIMATION */
 .float-animation {
   animation: floatUpDown 3s ease-in-out infinite;
 }
 @keyframes floatUpDown {
-  0% { transform: translateY(0px); }
+  0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  100% { transform: translateY(0); }
 }
 
-/* FEATURES SECTION */
+/* SECTION STYLES */
 .features-section {
   margin: 40px 0;
   text-align: center;
@@ -208,14 +196,12 @@ html, body {
   background-color: #111;
   border-radius: 6px;
   padding: 20px;
-  box-shadow: 0 0 15px rgba(0,255,234,0.1);
+  box-shadow: 0 0 15px rgba(0,204,170,0.1);
   transition: 0.3s;
 }
 .feature-box:hover {
   transform: translateY(-5px);
 }
-
-/* VIDEO DEMO SECTION */
 .video-demo-section {
   text-align: center;
   margin: 40px 0;
@@ -224,7 +210,7 @@ html, body {
   display: inline-block;
 }
 
-/* GALLERY SECTION */
+/* GALLERY */
 .gallery-section {
   text-align: center;
   margin-bottom: 40px;
@@ -241,7 +227,7 @@ html, body {
   border-radius: 6px;
 }
 
-/* CART SECTION */
+/* CART */
 .cart-section {
   text-align: center;
 }
@@ -259,7 +245,7 @@ html, body {
   background-color: #111;
   border-radius: 6px;
   padding: 15px;
-  box-shadow: 0 0 10px rgba(0,255,234,0.15);
+  box-shadow: 0 0 10px rgba(0,204,170,0.15);
 }
 .cart-item-image {
   width: 100px;
@@ -293,7 +279,7 @@ html, body {
   background-color: #111;
   padding: 20px;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,255,234,0.15);
+  box-shadow: 0 0 10px rgba(0,204,170,0.15);
   text-align: left;
 }
 .checkout-btn {
@@ -301,13 +287,13 @@ html, body {
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
-  background-color: #00ffe0;
-  color: #080808;
+  background-color: #00ccaa;
+  color: #0c0c0c;
   font-weight: 700;
   cursor: pointer;
 }
 
-/* AUTH SECTION */
+/* AUTH SECTIONS */
 .auth-section {
   max-width: 400px;
   margin: 60px auto;
@@ -331,8 +317,8 @@ html, body {
   color: #fff;
 }
 .auth-form button {
-  background-color: #00ffe0;
-  color: #080808;
+  background-color: #00ccaa;
+  color: #0c0c0c;
   border: none;
   border-radius: 4px;
   font-weight: 700;
@@ -341,7 +327,7 @@ html, body {
   transition: 0.3s;
 }
 
-/* CONTACT SECTION */
+/* CONTACT */
 .contact-section {
   max-width: 600px;
   margin: 40px auto;
@@ -366,8 +352,8 @@ html, body {
   color: #fff;
 }
 .contact-form button {
-  background-color: #00ffe0;
-  color: #080808;
+  background-color: #00ccaa;
+  color: #0c0c0c;
   font-weight: 700;
   border: none;
   border-radius: 4px;
@@ -375,7 +361,7 @@ html, body {
   cursor: pointer;
 }
 
-/* CUSTOMIZER SECTION */
+/* CUSTOMIZER */
 .customizer-section {
   text-align: center;
   max-width: 1200px;
@@ -388,7 +374,7 @@ html, body {
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 30px;
-  box-shadow: 0 0 10px rgba(0,255,234,0.1);
+  box-shadow: 0 0 10px rgba(0,204,170,0.1);
 }
 .customizer-controls,
 .extra-controls {
@@ -400,13 +386,14 @@ html, body {
 }
 .customizer-controls button,
 .extra-controls button {
-  background-color: #00ffe0;
-  color: #080808;
+  background-color: #00ccaa;
+  color: #0c0c0c;
   font-weight: 700;
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
 }
 .customizer-controls select {
   background-color: #222;
@@ -422,8 +409,8 @@ html, body {
   cursor: pointer;
 }
 .add-to-cart button {
-  background-color: #00ffe0;
-  color: #080808;
+  background-color: #00ccaa;
+  color: #0c0c0c;
   border: none;
   border-radius: 4px;
   font-weight: 700;
@@ -431,23 +418,21 @@ html, body {
   cursor: pointer;
   transition: 0.3s;
 }
-
-/* ADVANCED CONTROLS */
 .advanced-controls {
   margin-top: 20px;
   text-align: left;
   padding: 15px;
-  background-color: rgba(255,255,255,0.05);
-  border: 1px solid rgba(0,255,234,0.2);
+  background-color: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,204,170,0.2);
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,255,234,0.1);
+  box-shadow: 0 0 8px rgba(0,204,170,0.1);
 }
 .advanced-controls label {
   margin-right: 10px;
 }
 .advanced-controls button {
-  background-color: #00ffe0;
-  color: #080808;
+  background-color: #00ccaa;
+  color: #0c0c0c;
   font-weight: 700;
   padding: 8px 15px;
   border: none;
@@ -461,10 +446,10 @@ html, body {
 .footer {
   text-align: center;
   padding: 15px;
-  background-color: #0f0f0f;
+  background-color: #111;
   margin-top: 40px;
   font-size: 0.9rem;
-  border-top: 1px solid #111;
+  border-top: 1px solid #222;
 }
 
 /* RESPONSIVE */

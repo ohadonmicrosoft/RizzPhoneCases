@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
   
-    const dirLight = new THREE.DirectionalLight(0x00ffe0, 0.5);
+    const dirLight = new THREE.DirectionalLight(0x00ccaa, 0.5);
     dirLight.position.set(0, 5, 5);
     scene.add(dirLight);
   
     let phoneModel = null;
-    let caseMesh = null; // the main phone body that should receive the texture
+    let caseMesh = null; // For the phone shell
   
     const loader = new THREE.GLTFLoader();
     loader.load(
@@ -34,13 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
       (gltf) => {
         phoneModel = gltf.scene;
         phoneModel.position.set(0, -1, 0);
-  
-        // Attempt to find a mesh named "PhoneCaseMesh" (or the relevant name in your 3D model)
-        caseMesh = phoneModel.getObjectByName("PhoneCaseMesh");
+        caseMesh = phoneModel.getObjectByName("PhoneCaseMesh"); // Must match your model's mesh name
   
         scene.add(phoneModel);
   
-        // Basic rotation loop
         function animate() {
           requestAnimationFrame(animate);
           phoneModel.rotation.y += 0.005;
@@ -54,22 +51,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   
-    // Expose a global function to update the mesh texture
+    // Make a global function so the 2D customizer can pass the dataURL
     window.updateCaseTexture = function(dataURL) {
       if (!caseMesh) {
-        console.warn("PhoneCaseMesh not found in the 3D model!");
+        console.warn("Case mesh not found in the model!");
         return;
       }
       const textureLoader = new THREE.TextureLoader();
       textureLoader.load(dataURL, (texture) => {
-        // Apply the texture to the phone case
         caseMesh.material.map = texture;
         caseMesh.material.needsUpdate = true;
-        console.log("3D wrap texture updated from user design!");
+        console.log("Case texture updated with user design.");
       });
     };
   
-    // Resizing
+    // Handle window resize
     window.addEventListener("resize", onWindowResize);
     function onWindowResize() {
       camera.aspect = threeDContainer.clientWidth / threeDContainer.clientHeight;

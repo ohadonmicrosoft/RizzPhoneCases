@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const fontSelect = document.getElementById("fontSelect");
   const colorPicker = document.getElementById("colorPicker");
 
-  // Load phone skeleton or background
   function loadPhoneSkeleton(imageName) {
-    const path = `assets/phone-skeletons/${imageName}`; // if you store skeleton images
-    // For now, if you have a simple background, adjust accordingly
+    const path = `assets/phone-skeletons/${imageName}`;
     fabric.Image.fromURL(path, (img) => {
       canvas.clear();
       canvas.setWidth(img.width);
@@ -22,14 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
     deviceModelSelect.addEventListener("change", (e) => {
       loadPhoneSkeleton(e.target.value);
     });
-    // Initialize with default selection
     loadPhoneSkeleton(deviceModelSelect.value);
   }
 
-  // UPLOAD IMAGE
-  const uploadImageBtn = document.getElementById("uploadImageBtn");
-  if (uploadImageBtn) {
-    uploadImageBtn.addEventListener("click", () => {
+  // Upload Image
+  const uploadBtn = document.getElementById("uploadImageBtn");
+  if (uploadBtn) {
+    uploadBtn.addEventListener("click", () => {
       const fileInput = document.createElement("input");
       fileInput.type = "file";
       fileInput.accept = "image/*";
@@ -50,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ADD TEXT
+  // Add Text
   const addTextBtn = document.getElementById("addTextBtn");
   if (addTextBtn) {
     addTextBtn.addEventListener("click", () => {
@@ -67,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CHANGE FONT
+  // Font Select
   if (fontSelect) {
     fontSelect.addEventListener("change", (e) => {
       const activeObj = canvas.getActiveObject();
@@ -78,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // COLOR PICKER
+  // Color Picker
   if (colorPicker) {
     colorPicker.addEventListener("change", (e) => {
       const activeObj = canvas.getActiveObject();
@@ -89,211 +86,162 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ADD RECT
-  const addRectBtn = document.getElementById("addRectBtn");
-  if (addRectBtn) {
-    addRectBtn.addEventListener("click", () => {
-      const rect = new fabric.Rect({
-        left: 100,
-        top: 100,
-        fill: "rgba(0,255,234,0.5)",
-        width: 100,
-        height: 100
-      });
-      canvas.add(rect);
-      canvas.setActiveObject(rect);
+  // Add shapes (Rect, Circle, Triangle, Star)
+  document.getElementById("addRectBtn")?.addEventListener("click", () => {
+    const rect = new fabric.Rect({
+      left: 100,
+      top: 100,
+      fill: "rgba(0,204,170,0.5)",
+      width: 100,
+      height: 100
+    });
+    canvas.add(rect);
+    canvas.setActiveObject(rect);
+    canvas.renderAll();
+  });
+  document.getElementById("addCircleBtn")?.addEventListener("click", () => {
+    const circle = new fabric.Circle({
+      left: 120,
+      top: 120,
+      radius: 50,
+      fill: "rgba(0,204,170,0.5)"
+    });
+    canvas.add(circle);
+    canvas.setActiveObject(circle);
+    canvas.renderAll();
+  });
+  document.getElementById("addTriangleBtn")?.addEventListener("click", () => {
+    const triangle = new fabric.Triangle({
+      left: 140,
+      top: 140,
+      width: 80,
+      height: 80,
+      fill: "rgba(0,204,170,0.5)"
+    });
+    canvas.add(triangle);
+    canvas.setActiveObject(triangle);
+    canvas.renderAll();
+  });
+  document.getElementById("addStarBtn")?.addEventListener("click", () => {
+    const star = new fabric.Polygon([
+      { x: 0,  y: -50 },
+      { x: 14, y: -20 },
+      { x: 47, y: -15 },
+      { x: 23, y: 7 },
+      { x: 29, y: 40 },
+      { x: 0,  y: 25 },
+      { x: -29,y: 40 },
+      { x: -23,y: 7 },
+      { x: -47,y: -15 },
+      { x: -14,y: -20 }
+    ], {
+      left: 160,
+      top: 160,
+      fill: "rgba(0,204,170,0.5)"
+    });
+    canvas.add(star);
+    canvas.setActiveObject(star);
+    canvas.renderAll();
+  });
+
+  // Delete Selected
+  document.getElementById("deleteObjBtn")?.addEventListener("click", () => {
+    const activeObj = canvas.getActiveObject();
+    if (activeObj) {
+      canvas.remove(activeObj);
       canvas.renderAll();
-    });
-  }
+    }
+  });
 
-  // ADD CIRCLE
-  const addCircleBtn = document.getElementById("addCircleBtn");
-  if (addCircleBtn) {
-    addCircleBtn.addEventListener("click", () => {
-      const circle = new fabric.Circle({
-        left: 120,
-        top: 120,
-        radius: 50,
-        fill: "rgba(0,255,234,0.5)"
-      });
-      canvas.add(circle);
-      canvas.setActiveObject(circle);
-      canvas.renderAll();
-    });
-  }
+  // Clear Canvas
+  document.getElementById("clearCanvasBtn")?.addEventListener("click", () => {
+    canvas.clear();
+    loadPhoneSkeleton(deviceModelSelect.value);
+  });
 
-  // ADD TRIANGLE
-  const addTriangleBtn = document.getElementById("addTriangleBtn");
-  if (addTriangleBtn) {
-    addTriangleBtn.addEventListener("click", () => {
-      const triangle = new fabric.Triangle({
-        left: 120,
-        top: 120,
-        width: 80,
-        height: 80,
-        fill: "rgba(0,255,234,0.5)"
-      });
-      canvas.add(triangle);
-      canvas.setActiveObject(triangle);
-      canvas.renderAll();
-    });
-  }
+  // Change Canvas BG
+  document.getElementById("changeCaseColorBtn")?.addEventListener("click", () => {
+    const bg = prompt("Enter a background color (e.g. #000000):");
+    if (bg) {
+      canvas.setBackgroundColor(bg, canvas.renderAll.bind(canvas));
+    }
+  });
 
-  // ADD STAR
-  const addStarBtn = document.getElementById("addStarBtn");
-  if (addStarBtn) {
-    addStarBtn.addEventListener("click", () => {
-      const star = new fabric.Polygon([
-        { x: 0,  y: -50 },
-        { x: 14, y: -20 },
-        { x: 47, y: -15 },
-        { x: 23, y: 7 },
-        { x: 29, y: 40 },
-        { x: 0,  y: 25 },
-        { x: -29,y: 40 },
-        { x: -23,y: 7 },
-        { x: -47,y: -15 },
-        { x: -14,y: -20 }
-      ], {
-        left: 140,
-        top: 140,
-        fill: "rgba(0,255,234,0.5)"
-      });
-      canvas.add(star);
-      canvas.setActiveObject(star);
-      canvas.renderAll();
-    });
-  }
-
-  // DELETE SELECTED
-  const deleteObjBtn = document.getElementById("deleteObjBtn");
-  if (deleteObjBtn) {
-    deleteObjBtn.addEventListener("click", () => {
-      const activeObj = canvas.getActiveObject();
-      if (activeObj) {
-        canvas.remove(activeObj);
-        canvas.renderAll();
-      }
-    });
-  }
-
-  // CLEAR CANVAS
-  const clearCanvasBtn = document.getElementById("clearCanvasBtn");
-  if (clearCanvasBtn) {
-    clearCanvasBtn.addEventListener("click", () => {
-      canvas.clear();
-      loadPhoneSkeleton(deviceModelSelect.value);
-    });
-  }
-
-  // CHANGE CANVAS BG
-  const changeCaseColorBtn = document.getElementById("changeCaseColorBtn");
-  if (changeCaseColorBtn) {
-    changeCaseColorBtn.addEventListener("click", () => {
-      const bg = prompt("Enter a background color (e.g. #000000):");
-      if (bg) {
-        canvas.setBackgroundColor(bg, canvas.renderAll.bind(canvas));
-      }
-    });
-  }
-
-  // ADVANCED: GRADIENT
+  // Gradient
   const gradColor1 = document.getElementById("gradColor1");
   const gradColor2 = document.getElementById("gradColor2");
-  const applyGradientBtn = document.getElementById("applyGradientBtn");
-
-  if (applyGradientBtn) {
-    applyGradientBtn.addEventListener("click", () => {
-      const activeObj = canvas.getActiveObject();
-      if (!activeObj) {
-        alert("No object selected!");
-        return;
-      }
-      const gradient = new fabric.Gradient({
-        type: 'linear',
-        coords: { x1: 0, y1: 0, x2: activeObj.width, y2: 0 },
-        colorStops: [
-          { offset: 0, color: gradColor1.value },
-          { offset: 1, color: gradColor2.value }
-        ]
-      });
-      activeObj.set({ fill: gradient });
-      canvas.renderAll();
+  document.getElementById("applyGradientBtn")?.addEventListener("click", () => {
+    const activeObj = canvas.getActiveObject();
+    if (!activeObj) {
+      alert("No object selected!");
+      return;
+    }
+    const gradient = new fabric.Gradient({
+      type: 'linear',
+      coords: { x1: 0, y1: 0, x2: activeObj.width, y2: 0 },
+      colorStops: [
+        { offset: 0, color: gradColor1.value },
+        { offset: 1, color: gradColor2.value }
+      ]
     });
-  }
+    activeObj.set({ fill: gradient });
+    canvas.renderAll();
+  });
 
-  // ADVANCED: SHADOW
+  // Shadow
   const shadowX = document.getElementById("shadowX");
   const shadowY = document.getElementById("shadowY");
   const shadowBlur = document.getElementById("shadowBlur");
   const shadowColor = document.getElementById("shadowColor");
-  const applyShadowBtn = document.getElementById("applyShadowBtn");
+  document.getElementById("applyShadowBtn")?.addEventListener("click", () => {
+    const activeObj = canvas.getActiveObject();
+    if (!activeObj) {
+      alert("No object selected!");
+      return;
+    }
+    activeObj.setShadow({
+      color: shadowColor.value,
+      blur: parseInt(shadowBlur.value) || 5,
+      offsetX: parseInt(shadowX.value) || 0,
+      offsetY: parseInt(shadowY.value) || 0
+    });
+    canvas.renderAll();
+  });
 
-  if (applyShadowBtn) {
-    applyShadowBtn.addEventListener("click", () => {
-      const activeObj = canvas.getActiveObject();
-      if (!activeObj) {
-        alert("No object selected!");
-        return;
-      }
-      activeObj.setShadow({
-        color: shadowColor.value,
-        blur: parseInt(shadowBlur.value, 10) || 5,
-        offsetX: parseInt(shadowX.value, 10) || 0,
-        offsetY: parseInt(shadowY.value, 10) || 0
-      });
+  // Save / Load
+  document.getElementById("saveDesignBtn")?.addEventListener("click", () => {
+    const json = JSON.stringify(canvas.toJSON());
+    localStorage.setItem("rizzDesign", json);
+    alert("Design saved locally!");
+  });
+  document.getElementById("loadDesignBtn")?.addEventListener("click", () => {
+    const saved = localStorage.getItem("rizzDesign");
+    if (!saved) {
+      alert("No saved design found!");
+      return;
+    }
+    canvas.clear();
+    canvas.loadFromJSON(saved, () => {
       canvas.renderAll();
+      alert("Design loaded from Local Storage!");
     });
-  }
+  });
 
-  // SAVE DESIGN (LOCAL STORAGE)
-  const saveDesignBtn = document.getElementById("saveDesignBtn");
-  if (saveDesignBtn) {
-    saveDesignBtn.addEventListener("click", () => {
-      const json = JSON.stringify(canvas.toJSON());
-      localStorage.setItem("rizzDesign", json);
-      alert("Design saved locally!");
-    });
-  }
+  // Sync with 3D
+  document.getElementById("sync3DTextureBtn")?.addEventListener("click", () => {
+    const dataURL = canvas.toDataURL({ format: "png", quality: 1 });
+    if (window.updateCaseTexture) {
+      window.updateCaseTexture(dataURL);
+      alert("Your design has been applied to the 3D phone model!");
+    } else {
+      alert("3D Sync function not found!");
+    }
+  });
 
-  // LOAD DESIGN
-  const loadDesignBtn = document.getElementById("loadDesignBtn");
-  if (loadDesignBtn) {
-    loadDesignBtn.addEventListener("click", () => {
-      const saved = localStorage.getItem("rizzDesign");
-      if (!saved) {
-        alert("No saved design found!");
-        return;
-      }
-      canvas.clear();
-      canvas.loadFromJSON(saved, () => {
-        canvas.renderAll();
-        alert("Design loaded from Local Storage!");
-      });
-    });
-  }
-
-  // SYNC 3D TEXTURE
-  const sync3DTextureBtn = document.getElementById("sync3DTextureBtn");
-  if (sync3DTextureBtn) {
-    sync3DTextureBtn.addEventListener("click", () => {
-      const dataURL = canvas.toDataURL({ format: "png", quality: 1 });
-      if (window.updateCaseTexture) {
-        window.updateCaseTexture(dataURL);
-        alert("Your design has been wrapped around the 3D model!");
-      } else {
-        alert("3D Sync function not found!");
-      }
-    });
-  }
-
-  // ADD TO CART
-  const addToCartBtn = document.getElementById("addToCartBtn");
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener("click", () => {
-      const finalImage = canvas.toDataURL({ format: "png", quality: 1.0 });
-      alert("Design added to cart (placeholder).");
-      // Real logic would send finalImage to server or store in a DB
-    });
-  }
+  // Add to Cart
+  document.getElementById("addToCartBtn")?.addEventListener("click", () => {
+    const finalImage = canvas.toDataURL({ format: "png", quality: 1.0 });
+    alert("Design added to cart (placeholder).");
+    // Real logic: send finalImage to server or store in DB
+  });
 });

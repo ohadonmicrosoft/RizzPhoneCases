@@ -1,8 +1,4 @@
-/* fonts.css - additional or custom font definitions */
-
-/* Example: using local or external fonts, if needed */
-/* Already loaded Google Fonts in <head>, so this file might be extra. */
-
+/* fonts.css */
 .font-orbitron {
     font-family: 'Orbitron', sans-serif;
   }
