@@ -35,6 +35,55 @@ npm start
 ```
 Open your browser and navigate to `http://localhost:3000` to view the application.
 
+## Directory Structure
+The project directory structure is as follows:
+```
+├── README.md
+├── assets
+│   ├── images
+│   └── videos
+├── cart.html
+├── contact.html
+├── css
+│   └── style.css
+├── customizer.html
+├── gallery.html
+├── index.html
+├── js
+│   ├── customizer.js
+│   ├── main.js
+│   └── menu.js
+├── login.html
+└── register.html
+
+5 directories, 12 files
+ohad@OhadDevPc:~/work/RizzPhoneCasesmain$ tree -L 3
+.
+├── README.md
+├── assets
+│   ├── images
+│   │   ├── gallery-1.jpg
+│   │   ├── gallery-2.jpg
+│   │   ├── gallery-3.jpg
+│   │   ├── hero-bg.jpg
+│   │   └── placeholder-case.png
+│   └── videos
+│       └── sample-video.mp4
+├── cart.html
+├── contact.html
+├── css
+│   └── style.css
+├── customizer.html
+├── gallery.html
+├── index.html
+├── js
+│   ├── customizer.js
+│   ├── main.js
+│   └── menu.js
+├── login.html
+└── register.html
+```
+
 ## Contributing
 We welcome contributions! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
 
