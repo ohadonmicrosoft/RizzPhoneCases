@@ -1,0 +1,25 @@
+/* 
+  fonts.css
+  Additional custom font imports or classes
+*/
+
+/* If you want to import local WOFF2 fonts:
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../fonts/MyCustomFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+/* Classes to apply specific fonts easily */
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+  .font-pacifico {
+    font-family: 'Pacifico', cursive;
+  }
+  

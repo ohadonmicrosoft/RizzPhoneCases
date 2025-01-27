@@ -4,61 +4,123 @@
 ![License](https://img.shields.io/github/license/yourusername/RizzPhoneCases)
 
 ## Project Description
-RizzPhoneCases is a web application for customizing and purchasing phone cases. Users can choose from a variety of designs, colors, and materials to create their perfect phone case. The application provides an intuitive interface and a seamless shopping experience.
+
+**RizzPhoneCases** is a web application for **customizing and purchasing phone cases**. Users can design cases by uploading images, adding text, and selecting colors or materials to create their own unique style. The application aims to provide an intuitive UI/UX, seamless shopping experience, and easy deployment options.
+
+---
+
+## Features
+
+1. **Case Customizer**  
+   - Upload images or graphics.  
+   - Add text with various fonts and colors.  
+   - Real-time preview of your personalized design.
+
+2. **Responsive Layout**  
+   - Works fluidly on desktop, tablet, and mobile devices.
+
+3. **Gallery**  
+   - Showcases featured designs and user inspirations.
+
+4. **Shopping Cart**  
+   - Add and remove items.  
+   - See item details and total cost.
+
+5. **Authentication**  
+   - Login/Registration pages for personalizing the experience and saving designs (not fully implemented unless connected to backend).
+
+---
 
 ## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- Node.js (>=14.x)
-- npm (>=6.x)
-- Git
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (>=14.x)
+- **npm** (>=6.x)
+- **Git** (for cloning/forking)
+
+> *Note*: If you only want to run it as a static site, you do not strictly need Node.js or npm for a basic local setup—but it is recommended for managing dependencies or deploying certain build pipelines.
+
+---
 
 ## Installation
-To install and run the project locally, follow these steps:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/RizzPhoneCases.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd RizzPhoneCases
-    ```
-3. Install the dependencies:
-    ```bash
-    npm install
-    ```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/RizzPhoneCases.git
+   ```
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd RizzPhoneCases
+   ```
+
+3. **Install dependencies** (if applicable):
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server** (if you have a simple Node server or use a local server tool like [live-server](https://www.npmjs.com/package/live-server)):
+   ```bash
+   npm start
+   ```
+   Then open your browser at [http://localhost:3000](http://localhost:3000) (or the configured port).
+
+> **Alternatively**: Since this is a mostly static site, you can simply open `index.html` in your browser or use:
+> ```bash
+> npx http-server .
+> ```
+> and open [http://localhost:8080](http://localhost:8080) (for example).
+
+---
 
 ## Usage
-To start the development server, run:
-```bash
-npm start
-```
-Open your browser and navigate to `http://localhost:3000` to view the application.
+
+### Local Development
+
+- **Index Page**  
+  Located at `index.html`. This is the main landing page showcasing hero images and CTA.
+
+- **Customizer Page**  
+  `customizer.html` – Users can upload images, add text, and see a live preview of their design.
+
+- **Gallery Page**  
+  `gallery.html` – Displays featured or inspirational phone case designs.
+
+- **Cart Page**  
+  `cart.html` – Shows items added to the cart and their subtotal.
+
+- **Authentication Pages**  
+  `login.html` and `register.html` – Basic forms for user login and sign-up.
+
+- **Contact Page**  
+  `contact.html` – A simple contact form.
+
+### Deploying
+
+You can deploy **RizzPhoneCases** as a static site or use frameworks like **Express** to serve the site:
+
+1. **GitHub Pages**:  
+   - Push to a GitHub repository.  
+   - Go to **Settings > Pages**, choose **branch** (e.g., `main`) and **/(root)** or `docs/` if you store your site in another folder.  
+   - Your site will be live at `https://<username>.github.io/<repo-name>`.
+
+2. **Netlify**:  
+   - Create a Netlify account and connect your GitHub repository.  
+   - Netlify will automatically build and deploy your static site.
+
+3. **Vercel**:  
+   - Similar to Netlify, sign in and link to your GitHub repository.  
+   - Vercel will build and provide a unique domain.
+
+---
 
 ## Directory Structure
-The project directory structure is as follows:
-```
-├── README.md
-├── assets
-│   ├── images
-│   └── videos
-├── cart.html
-├── contact.html
-├── css
-│   └── style.css
-├── customizer.html
-├── gallery.html
-├── index.html
-├── js
-│   ├── customizer.js
-│   ├── main.js
-│   └── menu.js
-├── login.html
-└── register.html
 
-5 directories, 12 files
-ohad@OhadDevPc:~/work/RizzPhoneCasesmain$ tree -L 3
-.
+Below is the project directory structure:
+
+```
+RizzPhoneCases/
 ├── README.md
 ├── assets
 │   ├── images
@@ -84,17 +146,62 @@ ohad@OhadDevPc:~/work/RizzPhoneCasesmain$ tree -L 3
 └── register.html
 ```
 
+- **assets/** – Contains images and videos used throughout the site.  
+- **css/** – Contains CSS files. The primary stylesheet is `style.css`.  
+- **js/** – JavaScript files for interactivity:  
+  - `menu.js` handles the navigation menu (sidebar toggles).  
+  - `main.js` handles global scripts (e.g., forms).  
+  - `customizer.js` handles the phone case customizer logic.
+
+---
+
+## Scripts
+
+If you want to add scripts to run or build the project (e.g., a Node-based server or bundling with a tool like Webpack), you could define them in your `package.json`. For example:
+
+```json
+{
+  "scripts": {
+    "start": "live-server .",
+    "build": "echo 'No build step defined yet'"
+  }
+}
+```
+
+Adjust as needed.
+
+---
+
 ## Contributing
-We welcome contributions! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository.  
+2. Create a new branch (`git checkout -b feature/YourFeature`).  
+3. Make your changes and commit (`git commit -m 'Add some feature'`).  
+4. Push to your branch (`git push origin feature/YourFeature`).  
+5. Create a pull request.
+
+For more details, see our [CONTRIBUTING.md](CONTRIBUTING.md) (if available).
+
+---
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Acknowledgments
-We would like to thank the following resources and libraries that made this project possible:
-- [React](https://reactjs.org/)
-- [Express](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
+
+- [React](https://reactjs.org/) and [Express](https://expressjs.com/) references (though the core project is currently static).
+- [MongoDB](https://www.mongodb.com/) for potential backend database references.
+- Any third-party libraries used for demonstration (e.g., [Fabric.js](http://fabricjs.com/) for customizer, etc.).
+
+---
 
 ## Contact
-For any inquiries or support, please contact us at [support@rizzphonecases.com](mailto:support@rizzphonecases.com).
+
+For any inquiries or support, please email us at [support@rizzphonecases.com](mailto:support@rizzphonecases.com).
+
+---

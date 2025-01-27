@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Rizz Customizer - 2D & 3D phone-case customization." />
-  <meta name="keywords" content="rizz, phone, customizer, 3D, neon" />
-  <meta name="author" content="Rizz" />
+  <meta name="description" content="MeyRizz Customizer - 2D & 3D phone case editing with advanced features." />
+  <meta name="keywords" content="MeyRizz, phone customizer, neon, turquoise" />
+  <meta name="author" content="MeyRizz" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rizz - Customizer</title>
+  <title>MeyRizz - Customize</title>
 
   <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Montserrat:wght@700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto&display=swap"
     rel="stylesheet"
   />
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Neon/Glitter CSS -->
+  <!-- Neon CSS -->
   <link rel="stylesheet" href="css/neon.css" />
+  <!-- Optional Fonts CSS -->
+  <link rel="stylesheet" href="css/fonts.css" />
 
   <!-- Fabric.js (2D Editor) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
-  <!-- Three.js (3D Viewer) + GLTFLoader -->
+  <!-- Three.js (for 3D) + GLTFLoader -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
   <!-- Optional OrbitControls
@@ -28,20 +30,16 @@
   -->
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
-    <div class="logo neon-glow">Rizz</div>
+    <div class="logo neon-glow">MeyRizz</div>
     <div class="menu-toggle" id="openMenuBtn">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </header>
 
-  <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo neon-glow">Rizz</div>
+      <div class="sidebar-logo neon-glow">MeyRizz</div>
       <div class="close-btn" id="closeMenuBtn">&#10005;</div>
     </div>
     <ul class="sidebar-nav">
@@ -59,43 +57,80 @@
 
   <main class="main-content fade-in">
     <section class="customizer-section">
-      <h1 class="neon-text">Customize Your Case</h1>
+      <h1 class="neon-text">Design Your Case</h1>
 
+      <!-- Device Skeleton Selection -->
       <div class="device-selection neon-text">
-        <label for="device-model">Select Device:</label>
+        <label for="device-model">Choose Device Model:</label>
         <select id="device-model">
-          <option value="iphone14">iPhone 14</option>
-          <option value="iphone13">iPhone 13</option>
-          <option value="samsungS22">Samsung S22</option>
-          <option value="pixel7">Pixel 7</option>
+          <option value="iphone14.png">iPhone 14</option>
+          <option value="iphone14promax.png">iPhone 14 Pro Max</option>
+          <option value="samsungS22.png">Samsung S22</option>
+          <option value="samsungS21.png">Samsung S21</option>
+          <option value="pixel7.png">Pixel 7</option>
+          <!-- More as needed -->
         </select>
       </div>
 
-      <!-- 2D Fabric.js Editor -->
       <div class="twoD-section neon-card float-animation">
-        <h2 class="neon-text">2D Designer</h2>
-        <canvas id="caseCanvas" width="300" height="600"></canvas>
+        <h2 class="neon-text">2D Editor</h2>
+        <!-- The Fabric.js Canvas with phone skeleton as background -->
+        <canvas id="caseCanvas" width="300" height="600" style="background-color: #222;"></canvas>
 
         <div class="customizer-controls">
           <button id="uploadImageBtn">Upload Image</button>
           <button id="addTextBtn">Add Text</button>
-          <input type="color" id="colorPicker" value="#ff0000" title="Pick Color" />
-          <button id="deleteObjBtn">Delete Selected</button>
-          <button id="clearCanvasBtn">Clear All</button>
+          <select id="fontSelect">
+            <option value="Poppins">Poppins</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Arial">Arial</option>
+            <option value="Pacifico">Pacifico</option>
+            <!-- more fonts from fonts.css or Google Fonts -->
+          </select>
+          <input type="color" id="colorPicker" value="#00ffe0" title="Pick Color" />
         </div>
 
         <div class="extra-controls">
-          <button id="addRectBtn">Add Rect</button>
-          <button id="addCircleBtn">Add Circle</button>
-          <button id="changeCaseColorBtn">Canvas BG Color</button>
+          <button id="addRectBtn">Rectangle</button>
+          <button id="addCircleBtn">Circle</button>
+          <button id="addTriangleBtn">Triangle</button>
+          <button id="addStarBtn">Star</button>
+          <button id="deleteObjBtn">Delete Selected</button>
+          <button id="clearCanvasBtn">Clear All</button>
+          <button id="changeCaseColorBtn">Canvas BG</button>
+        </div>
+
+        <!-- Advanced Controls: Gradient, Shadow, Local Storage, 3D Sync -->
+        <div class="advanced-controls">
+          <h3 class="neon-text">Advanced Styles</h3>
+          <div style="margin-bottom: 10px;">
+            <label>Gradient Start: <input type="color" id="gradColor1" value="#00ffe0" /></label>
+            <label>Gradient End: <input type="color" id="gradColor2" value="#ffffff" /></label>
+            <button id="applyGradientBtn">Apply Gradient</button>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <h4 style="margin: 10px 0;">Shadow</h4>
+            <label>X Offset: <input type="number" id="shadowX" value="5" style="width:50px;" /></label>
+            <label>Y Offset: <input type="number" id="shadowY" value="5" style="width:50px;" /></label>
+            <label>Blur: <input type="number" id="shadowBlur" value="5" style="width:50px;" /></label>
+            <label>Color: <input type="color" id="shadowColor" value="#000000" /></label>
+            <button id="applyShadowBtn">Apply Shadow</button>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <button id="saveDesignBtn">Save Design</button>
+            <button id="loadDesignBtn">Load Design</button>
+          </div>
+          <div>
+            <button id="sync3DTextureBtn" class="neon-btn">Sync with 3D Model</button>
+          </div>
         </div>
       </div>
 
-      <!-- 3D Viewer -->
+      <!-- 3D Viewer Section -->
       <div class="threeD-section neon-card float-animation">
         <h2 class="neon-text">3D Preview</h2>
         <div id="threeDContainer" style="width: 400px; height: 400px; margin: 0 auto;"></div>
-        <p class="neon-text">Spin & Zoom</p>
+        <p class="neon-text">Rotate & Zoom</p>
       </div>
 
       <div class="add-to-cart">
@@ -104,12 +139,11 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer neon-text">
-    <p>&copy; 2025 Rizz - Customize in Style</p>
+    <p>&copy; 2025 MeyRizz - Extreme Customizations</p>
   </footer>
 
-  <!-- JS -->
+  <!-- JS Scripts -->
   <script src="js/menu.js"></script>
   <script src="js/customizer.js"></script>
   <script src="js/three-customizer.js"></script>

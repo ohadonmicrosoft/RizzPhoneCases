@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // LOGIN FORM
+  // Login Form
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
-      alert(`Login attempt:\nEmail: ${email}\nPassword: ${password}`);
-      // Implement real authentication here...
+      alert(`Attempting Login:\nEmail: ${email}\nPassword: ${password}`);
+      // Real authentication logic here
     });
   }
 
-  // REGISTER FORM
+  // Register Form
   const registerForm = document.getElementById("registerForm");
   if (registerForm) {
     registerForm.addEventListener("submit", (e) => {
@@ -19,12 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = document.getElementById("regName").value;
       const email = document.getElementById("regEmail").value;
       const password = document.getElementById("regPassword").value;
-      alert(`Register attempt:\nName: ${name}\nEmail: ${email}`);
-      // Implement real registration logic...
+      alert(`Attempting Registration:\nName: ${name}\nEmail: ${email}`);
+      // Real registration logic here
     });
   }
 
-  // CONTACT FORM
+  // Contact Form
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
@@ -33,20 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const contactEmail = document.getElementById("contactEmail").value;
       const contactMessage = document.getElementById("contactMessage").value;
       alert(
-        `Contact form submitted:\nName: ${contactName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`
+        `Contact Form:\nName: ${contactName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`
       );
-      // Real form submission logic...
-    });
-  }
-
-  // NEWSLETTER (if any .newsletter-form elements present)
-  const newsletterForm = document.querySelector(".newsletter-form");
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const emailField = newsletterForm.querySelector("input[type='email']");
-      alert(`Subscribed with: ${emailField.value}`);
-      emailField.value = "";
+      // Real contact logic here
     });
   }
 });

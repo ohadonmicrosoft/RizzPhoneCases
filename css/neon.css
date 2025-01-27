@@ -1,66 +1,63 @@
-/* NEON & GLITTER STYLES */
+/* NEON & GLITTER STYLES - TURQUOISE THEME */
 
-/* Basic neon glow for text */
 .neon-text {
     color: #fff;
     text-shadow:
-      0 0 5px #ff00ff,
-      0 0 10px #ff00ff,
-      0 0 20px #ff00ff,
-      0 0 40px #ff00ff;
+      0 0 5px #00ffe0,
+      0 0 10px #00ffe0,
+      0 0 20px #00ffe0,
+      0 0 30px #00ffe0;
     transition: transform 0.3s;
   }
   .neon-text:hover {
     transform: scale(1.05);
   }
   
-  /* Stronger neon glow for logos or headings */
   .neon-glow {
     color: #fff;
     text-shadow:
-      0 0 5px #ff00ff,
-      0 0 10px #ff00ff,
-      0 0 20px #ff00ff,
-      0 0 30px #ff00ff,
-      0 0 40px #ff00ff;
+      0 0 5px #00ffe0,
+      0 0 10px #00ffe0,
+      0 0 20px #00ffe0,
+      0 0 40px #00ffe0;
   }
   
-  /* Neon button style */
   .neon-btn {
-    background-color: #ff00ff;
-    color: #fff;
+    background-color: #00ffe0;
+    color: #080808;
     border: none;
+    border-radius: 4px;
     box-shadow:
-      0 0 10px #ff00ff,
-      0 0 20px #ff00ff;
+      0 0 10px #00ffe0,
+      0 0 20px #00ffe0;
     transition: 0.3s;
   }
   .neon-btn:hover {
     box-shadow:
-      0 0 15px #ff00ff,
-      0 0 30px #ff00ff;
+      0 0 15px #00ffe0,
+      0 0 30px #00ffe0;
     transform: scale(1.06);
   }
   
-  /* Semi-transparent background card with neon edges */
+  /* Neon card effect with turquoise edges */
   .neon-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 0, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0,255,234, 0.3);
+    backdrop-filter: blur(8px);
     border-radius: 8px;
     padding: 20px;
     box-shadow:
-      0 0 10px rgba(255, 0, 255, 0.2),
-      0 0 20px rgba(255, 0, 255, 0.1);
+      0 0 10px rgba(0,255,234,0.2),
+      0 0 20px rgba(0,255,234,0.1);
   }
   
-  /* Glitter text keyframe */
+  /* Glitter text effect with turquoise */
   @keyframes glitterSparkle {
     0%, 100% {
-      text-shadow: 0 0 10px #ff00ff;
+      text-shadow: 0 0 10px #00ffe0;
     }
     50% {
-      text-shadow: 0 0 20px #ff00ff;
+      text-shadow: 0 0 20px #00ffe0;
     }
   }
   .glitter-text {
