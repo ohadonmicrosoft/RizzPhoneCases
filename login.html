@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Log in to your Rizz account and access your custom designs">
-  <meta name="keywords" content="Rizz Login, Access Account, 3D Customization">
-  <meta name="author" content="Rizz">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+    name="description"
+    content="Log in to your Rizz account and access your custom designs"
+  />
+  <meta name="keywords" content="Rizz Login, Access Account, 3D Customization" />
+  <meta name="author" content="Rizz" />
   <title>Rizz | Login</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/neon.css">
+
+  <!-- Google Fonts & Font Awesome -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/font.css" />
+  <link rel="stylesheet" href="css/neon.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <!-- HEADER -->
   <header class="header">
-    <div class="container">
+    <div class="container header-container">
       <div class="logo">
         <a href="index.html" class="neon-logo">Rizz</a>
       </div>
@@ -30,10 +38,9 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="customizer.html">Customize</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="cart.html">Cart</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="register.html">Register</a></li>
+          <li><a href="cart.html">Cart</a></li>
           <li><a href="login.html" class="active">Login</a></li>
         </ul>
       </nav>
@@ -43,14 +50,19 @@
     </div>
   </header>
 
+  <!-- OVERLAY -->
+  <div id="overlay" class="overlay"></div>
+
   <!-- HERO SECTION -->
   <section class="hero hero-login">
     <div class="container">
       <h1 class="hero-title">
-        <span class="gradient-text">Welcome Back</span><br>
+        <span class="gradient-text">Welcome Back</span><br />
         <span class="neon-highlight">Log In to Your Rizz Account</span>
       </h1>
-      <p class="hero-description">Access your custom designs, manage your account, and explore new features.</p>
+      <p class="hero-description">
+        Access your custom designs, manage your account, and explore new features.
+      </p>
     </div>
   </section>
 
@@ -63,25 +75,37 @@
         <form id="loginForm" class="login-form">
           <div class="form-group">
             <label for="loginEmail">Email Address</label>
-            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Enter your email"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="loginPassword">Password</label>
-            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+              required
+            />
           </div>
           <div class="form-group form-remember">
             <label>
-              <input type="checkbox" id="rememberMe"> Remember Me
+              <input type="checkbox" id="rememberMe" /> Remember Me
             </label>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Log In</button>
           </div>
           <p class="form-footer">
-            Don’t have an account? <a href="register.html" class="neon-link">Sign Up</a>
+            Don’t have an account?
+            <a href="register.html" class="neon-link">Sign Up</a>
           </p>
           <p class="form-footer">
-            Forgot your password? <a href="reset-password.html" class="neon-link">Reset it here</a>
+            Forgot your password?
+            <a href="reset-password.html" class="neon-link">Reset it here</a>
           </p>
         </form>
       </div>
@@ -93,19 +117,18 @@
     <div class="container">
       <h2 class="section-title neon-text">Why Log In?</h2>
       <div class="benefits-grid">
-        <!-- Benefit 1 -->
         <div class="benefit-card">
           <i class="fas fa-save icon"></i>
           <h3>Save Your Designs</h3>
-          <p>Keep your custom 3D wraps safe and easily accessible for future edits.</p>
+          <p>
+            Keep your custom 3D wraps safe and easily accessible for future edits.
+          </p>
         </div>
-        <!-- Benefit 2 -->
         <div class="benefit-card">
           <i class="fas fa-lock icon"></i>
           <h3>Secure Access</h3>
           <p>Your data and designs are protected with top-notch security measures.</p>
         </div>
-        <!-- Benefit 3 -->
         <div class="benefit-card">
           <i class="fas fa-gift icon"></i>
           <h3>Exclusive Features</h3>
@@ -117,7 +140,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
+    <div class="container footer-container">
       <div class="footer-logo">
         <a href="index.html" class="neon-logo">Rizz</a>
       </div>
@@ -125,9 +148,9 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="customizer.html">Customize</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="cart.html">Cart</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
       </ul>
       <p class="footer-text">&copy; 2025 Rizz. All Rights Reserved.</p>
     </div>

@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Join Rizz and start creating custom 3D phone wraps">
-  <meta name="keywords" content="Rizz Register, Create Account, 3D Customization">
-  <meta name="author" content="Rizz">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+    name="description"
+    content="Join Rizz and start creating custom 3D phone wraps"
+  />
+  <meta
+    name="keywords"
+    content="Rizz Register, Create Account, 3D Customization"
+  />
+  <meta name="author" content="Rizz" />
   <title>Rizz | Register</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/neon.css">
+
+  <!-- Google Fonts & Font Awesome -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/font.css" />
+  <link rel="stylesheet" href="css/neon.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <!-- HEADER -->
   <header class="header">
-    <div class="container">
+    <div class="container header-container">
       <div class="logo">
         <a href="index.html" class="neon-logo">Rizz</a>
       </div>
@@ -30,9 +41,9 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="customizer.html">Customize</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="cart.html">Cart</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
           <li><a href="register.html" class="active">Register</a></li>
         </ul>
       </nav>
@@ -42,14 +53,19 @@
     </div>
   </header>
 
+  <!-- OVERLAY -->
+  <div id="overlay" class="overlay"></div>
+
   <!-- HERO SECTION -->
   <section class="hero hero-register">
     <div class="container">
       <h1 class="hero-title">
-        <span class="gradient-text">Create Your Account</span><br>
+        <span class="gradient-text">Create Your Account</span><br />
         <span class="neon-highlight">Join the Rizz Community</span>
       </h1>
-      <p class="hero-description">Start designing custom 3D wraps and unlock exclusive features. Let’s get started!</p>
+      <p class="hero-description">
+        Start designing custom 3D wraps and unlock exclusive features. Let’s get started!
+      </p>
     </div>
   </section>
 
@@ -58,29 +74,52 @@
     <div class="container">
       <div class="register-form-wrapper">
         <h2 class="section-title neon-text">Sign Up</h2>
-        <p>Fill out the form below to create your account and start customizing your phone wraps.</p>
+        <p>
+          Fill out the form below to create your account and start customizing your phone wraps.
+        </p>
         <form id="registerForm" class="register-form">
           <div class="form-group">
             <label for="regName">Full Name</label>
-            <input type="text" id="regName" placeholder="Enter your full name" required>
+            <input
+              type="text"
+              id="regName"
+              placeholder="Enter your full name"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="regEmail">Email Address</label>
-            <input type="email" id="regEmail" placeholder="Enter your email" required>
+            <input
+              type="email"
+              id="regEmail"
+              placeholder="Enter your email"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="regPassword">Password</label>
-            <input type="password" id="regPassword" placeholder="Create a password" required>
+            <input
+              type="password"
+              id="regPassword"
+              placeholder="Create a password"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="regConfirmPassword">Confirm Password</label>
-            <input type="password" id="regConfirmPassword" placeholder="Confirm your password" required>
+            <input
+              type="password"
+              id="regConfirmPassword"
+              placeholder="Confirm your password"
+              required
+            />
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Create Account</button>
           </div>
           <p class="form-footer">
-            Already have an account? <a href="login.html" class="neon-link">Log In</a>
+            Already have an account?
+            <a href="login.html" class="neon-link">Log In</a>
           </p>
         </form>
       </div>
@@ -92,19 +131,16 @@
     <div class="container">
       <h2 class="section-title neon-text">Why Join Rizz?</h2>
       <div class="benefits-grid">
-        <!-- Benefit 1 -->
         <div class="benefit-card">
           <i class="fas fa-user-plus icon"></i>
           <h3>Exclusive Access</h3>
           <p>Get access to advanced tools and premium design templates.</p>
         </div>
-        <!-- Benefit 2 -->
         <div class="benefit-card">
           <i class="fas fa-gift icon"></i>
           <h3>Special Rewards</h3>
           <p>Enjoy exclusive discounts and member-only promotions.</p>
         </div>
-        <!-- Benefit 3 -->
         <div class="benefit-card">
           <i class="fas fa-star icon"></i>
           <h3>Personalized Experience</h3>
@@ -116,7 +152,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
+    <div class="container footer-container">
       <div class="footer-logo">
         <a href="index.html" class="neon-logo">Rizz</a>
       </div>

@@ -1,47 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
   // LOGIN FORM
   const loginForm = document.getElementById("loginForm");
-  loginForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
 
-    if (validateEmail(email) && password.length > 0) {
-      alert(`Login successful!\nEmail: ${email}`);
-    } else {
-      alert("Please provide valid credentials.");
-    }
-  });
+      if (validateEmail(email) && password.length > 0) {
+        alert(`Login successful!\nEmail: ${email}`);
+      } else {
+        alert("Please provide valid credentials.");
+      }
+    });
+  }
 
   // REGISTER FORM
   const registerForm = document.getElementById("registerForm");
-  registerForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("regName").value.trim();
-    const email = document.getElementById("regEmail").value.trim();
-    const password = document.getElementById("regPassword").value.trim();
+  if (registerForm) {
+    registerForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("regName").value.trim();
+      const email = document.getElementById("regEmail").value.trim();
+      const password = document.getElementById("regPassword").value.trim();
+      const confirm = document.getElementById("regConfirmPassword").value.trim();
 
-    if (name.length > 0 && validateEmail(email) && password.length >= 6) {
-      alert(`Welcome, ${name}! Registration successful.`);
-    } else {
-      alert("Please fill in all fields correctly.");
-    }
-  });
+      if (
+        name.length > 0 &&
+        validateEmail(email) &&
+        password.length >= 6 &&
+        password === confirm
+      ) {
+        alert(`Welcome, ${name}! Registration successful.`);
+      } else {
+        alert("Please fill in all fields correctly (passwords must match).");
+      }
+    });
+  }
 
   // CONTACT FORM
   const contactForm = document.getElementById("contactForm");
-  contactForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const contactName = document.getElementById("contactName").value.trim();
-    const contactEmail = document.getElementById("contactEmail").value.trim();
-    const contactMessage = document.getElementById("contactMessage").value.trim();
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const contactName = document.getElementById("contactName").value.trim();
+      const contactEmail = document.getElementById("contactEmail").value.trim();
+      const contactMessage = document
+        .getElementById("contactMessage")
+        .value.trim();
 
-    if (contactName && validateEmail(contactEmail) && contactMessage) {
-      alert("Message sent successfully. We'll get back to you soon.");
-    } else {
-      alert("Please fill in all fields before submitting.");
-    }
-  });
+      if (contactName && validateEmail(contactEmail) && contactMessage) {
+        alert("Message sent successfully. We'll get back to you soon.");
+      } else {
+        alert("Please fill in all fields before submitting.");
+      }
+    });
+  }
 
   // Email Validation
   function validateEmail(email) {
@@ -49,7 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return regex.test(email);
   }
 
-  // Scroll to Top Button
+  // Scroll to Top Button (optional)
+  /*
   const scrollToTopBtn = document.createElement("button");
   scrollToTopBtn.textContent = "↑";
   scrollToTopBtn.className = "scroll-to-top";
@@ -67,4 +82,5 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollToTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+  */
 });
