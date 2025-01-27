@@ -1,40 +1,51 @@
+
+**Important**: 
+- Replace `hero-bg.jpg`, `gallery-*`, etc. with your actual images.  
+- Provide a real `.glb` phone model that includes side geometry so the texture can wrap around edges.
+
+---
+## **1) HTML Files**
+
+### **1.1) `index.html`**
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="MeyRizz Phone Cases - High-end neon phone case store with advanced customizations." />
-  <meta name="keywords" content="MeyRizz, phone cases, neon, black theme, turquoise" />
-  <meta name="author" content="MeyRizz" />
+  <meta name="description" content="Rizz - Full 3D phone wrap designs in a modern black & turquoise neon theme." />
+  <meta name="keywords" content="Rizz, phone cases, 3D wrap, neon turquoise, customization" />
+  <meta name="author" content="Rizz" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MeyRizz - Home</title>
+  <title>Rizz - Home</title>
   <!-- Favicon (optional) -->
   <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
 
   <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Orbitron:wght@400;700&display=swap"
     rel="stylesheet"
   />
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
   <!-- Neon/Glitter CSS -->
   <link rel="stylesheet" href="css/neon.css" />
-  <!-- Optional Fonts CSS -->
+  <!-- Fonts CSS (optional extended fonts) -->
   <link rel="stylesheet" href="css/fonts.css" />
 </head>
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="logo neon-glow">MeyRizz</div>
+    <div class="logo neon-glow">Rizz</div>
     <div class="menu-toggle" id="openMenuBtn">
       <span></span><span></span><span></span>
     </div>
   </header>
 
-  <!-- Sidebar Nav -->
+  <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo neon-glow">MeyRizz</div>
+      <div class="sidebar-logo neon-glow">Rizz</div>
       <div class="close-btn" id="closeMenuBtn">&#10005;</div>
     </div>
     <ul class="sidebar-nav">
@@ -42,7 +53,6 @@
       <li><a href="customizer.html">Customize</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="cart.html">Cart</a></li>
-      <li><a href="about.html">About</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="register.html">Register</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -52,56 +62,56 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    <!-- Parallax Hero Section -->
-    <section class="parallax-hero" style="background-image: url('assets/images/neon-hero-bg.jpg');">
+    <!-- Hero Section -->
+    <section class="parallax-hero" style="background-image: url('assets/images/hero-bg.jpg');">
       <div class="parallax-overlay"></div>
       <div class="hero-content fade-in neon-text">
-        <h1>Shine with MeyRizz</h1>
-        <p>Elevate your phone with our next-level neon & turquoise designs.</p>
+        <h1>Rizz 3D Wrap Cases</h1>
+        <p>Fully customized phone covers, wrapped around the entire case—front, back, & edges!</p>
         <a href="customizer.html" class="cta-button neon-btn">Start Designing</a>
       </div>
     </section>
 
-    <!-- Video Demo Section (Fully Responsive) -->
+    <!-- Intro Section -->
+    <section class="features-section neon-cards fade-in">
+      <h2 class="section-title neon-text">Why Rizz?</h2>
+      <div class="features-grid">
+        <div class="feature-box neon-card float-animation">
+          <h3>Full 3D Coverage</h3>
+          <p>We don't just print on the back—our specialized process wraps your design across edges for a complete, immersive look.</p>
+        </div>
+        <div class="feature-box neon-card float-animation">
+          <h3>Choose or Create</h3>
+          <p>Use our gallery designs or build yours from scratch. Add text, shapes, or images for a unique style.</p>
+        </div>
+        <div class="feature-box neon-card float-animation">
+          <h3>Cutting-Edge Tech</h3>
+          <p>High-end 3D previews, advanced materials, and crisp neon-turquoise vibes for that modern flair.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Demo Section -->
     <section class="video-demo-section fade-in">
-      <h2 class="section-title neon-text">3D Preview Demo</h2>
-      <div class="video-container float-animation" style="max-width: 80%; margin: 0 auto;">
-        <video style="width: 100%; border-radius: 10px;" controls poster="assets/images/placeholder-case.png">
-          <source src="assets/videos/phone-case-demo.mp4" type="video/mp4" />
+      <h2 class="section-title neon-text">See How It Wraps</h2>
+      <div class="video-container float-animation" style="max-width: 800px; margin: 0 auto;">
+        <video style="width: 100%; border-radius: 8px;" controls poster="assets/images/phone-wrap-model-screenshot.png">
+          <source src="assets/videos/sample-demo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
       <p class="neon-text" style="margin-top: 20px;">
-        Spin, zoom, and customize every detail of your phone case.
+        Spin the phone, watch your design hug every corner and edge.
       </p>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section neon-cards fade-in">
-      <h2 class="section-title neon-text">Why MeyRizz?</h2>
-      <div class="features-grid">
-        <div class="feature-box neon-card float-animation">
-          <h3>Turquoise Neon Vibes</h3>
-          <p>Rock a bold black & aqua aesthetic that turns heads everywhere.</p>
-        </div>
-        <div class="feature-box neon-card float-animation">
-          <h3>Advanced 3D & 2D Tools</h3>
-          <p>Combine real-time 3D viewing with an easy 2D editor for shapes, fonts & more.</p>
-        </div>
-        <div class="feature-box neon-card float-animation">
-          <h3>Ultra-Responsive Layout</h3>
-          <p>Enjoy a flawless experience on mobile, tablet, and desktop.</p>
-        </div>
-      </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="footer neon-text">
-    <p>&copy; 2025 MeyRizz - All rights reserved.</p>
+    <p>&copy; 2025 Rizz - Next-Level Phone Wraps</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -1,25 +1,12 @@
-/* 
-  fonts.css
-  Additional custom font imports or classes
-*/
+/* fonts.css - additional or custom font definitions */
 
-/* If you want to import local WOFF2 fonts:
-@font-face {
-  font-family: 'MyCustomFont';
-  src: url('../fonts/MyCustomFont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-*/
+/* Example: using local or external fonts, if needed */
+/* Already loaded Google Fonts in <head>, so this file might be extra. */
 
-/* Classes to apply specific fonts easily */
-.font-poppins {
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+  .font-poppins {
     font-family: 'Poppins', sans-serif;
-  }
-  .font-roboto {
-    font-family: 'Roboto', sans-serif;
-  }
-  .font-pacifico {
-    font-family: 'Pacifico', cursive;
   }
   

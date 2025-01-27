@@ -18,59 +18,58 @@ document.addEventListener("DOMContentLoaded", () => {
     threeDContainer.appendChild(renderer.domElement);
   
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
   
-    // Turquoise directional light
     const dirLight = new THREE.DirectionalLight(0x00ffe0, 0.5);
     dirLight.position.set(0, 5, 5);
     scene.add(dirLight);
   
-    let caseMesh = null; // We'll store a reference to the phone case mesh
-    let model = null;    // The main loaded glTF scene
+    let phoneModel = null;
+    let caseMesh = null; // the main phone body that should receive the texture
   
-    // Load the phone-case model
     const loader = new THREE.GLTFLoader();
     loader.load(
-      "assets/models/phone-case-model.glb",
+      "assets/models/phone-wrap-model.glb",
       (gltf) => {
-        model = gltf.scene;
-        model.position.set(0, -1, 0);
-        scene.add(model);
+        phoneModel = gltf.scene;
+        phoneModel.position.set(0, -1, 0);
   
-        // Attempt to find the mesh named "CaseMesh" (make sure your model uses that name)
-        caseMesh = model.getObjectByName("CaseMesh");
+        // Attempt to find a mesh named "PhoneCaseMesh" (or the relevant name in your 3D model)
+        caseMesh = phoneModel.getObjectByName("PhoneCaseMesh");
   
-        // Simple rotation
+        scene.add(phoneModel);
+  
+        // Basic rotation loop
         function animate() {
           requestAnimationFrame(animate);
-          model.rotation.y += 0.01;
+          phoneModel.rotation.y += 0.005;
           renderer.render(scene, camera);
         }
         animate();
       },
       undefined,
       (error) => {
-        console.error("Error loading 3D phone case model:", error);
+        console.error("Error loading 3D phone wrap model:", error);
       }
     );
   
-    // Expose a global function to update the texture from dataURL
+    // Expose a global function to update the mesh texture
     window.updateCaseTexture = function(dataURL) {
       if (!caseMesh) {
-        console.warn("CaseMesh not found in the 3D model!");
+        console.warn("PhoneCaseMesh not found in the 3D model!");
         return;
       }
       const textureLoader = new THREE.TextureLoader();
       textureLoader.load(dataURL, (texture) => {
-        // Assign as the map on the case material
+        // Apply the texture to the phone case
         caseMesh.material.map = texture;
         caseMesh.material.needsUpdate = true;
-        console.log("Case texture updated from dataURL");
+        console.log("3D wrap texture updated from user design!");
       });
     };
   
-    // Handle resizing
+    // Resizing
     window.addEventListener("resize", onWindowResize);
     function onWindowResize() {
       camera.aspect = threeDContainer.clientWidth / threeDContainer.clientHeight;
