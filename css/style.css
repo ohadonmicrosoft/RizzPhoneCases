@@ -1,6 +1,6 @@
-/********************************************
-  1) RESET & GLOBAL STYLES
-********************************************/
+/* -----------------------------------------------------
+  1) GLOBAL RESET & BASIC
+------------------------------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -14,19 +14,18 @@ html, body {
   background-color: #fefefe;
   color: #333;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* מונע גלילה אופקית */
+  overflow-x: hidden;
 }
 
-/* Container Utility */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/********************************************
+/* -----------------------------------------------------
   2) HEADER & NAV
-********************************************/
+------------------------------------------------------ */
 .site-header {
   position: fixed;
   width: 100%;
@@ -34,7 +33,7 @@ html, body {
   left: 0;
   background: #fff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  z-index: 999; /* מעל הכל, שלא יסתיר הרקע של hero */
+  z-index: 999;
 }
 
 .header-container {
@@ -47,7 +46,7 @@ html, body {
 .rizz-logo {
   font-family: 'Pacifico', cursive;
   font-size: 1.8rem;
-  color: #f07cab; /* צבע ורוד-סגלגל */
+  color: #f07cab;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -71,7 +70,7 @@ html, body {
   color: #333;
   font-weight: 600;
   transition: color 0.3s;
-  padding: 8px; /* קצת מרווח לכל לינק */
+  padding: 8px;
 }
 
 .nav-list a:hover {
@@ -82,7 +81,7 @@ html, body {
   border-bottom: 2px solid #f07cab;
 }
 
-/* Hamburger (Mobile) */
+/* Mobile nav (hamburger) */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -97,14 +96,15 @@ html, body {
   transition: all 0.3s;
 }
 
-/* Overlay (רקע אפור לתפריט מובייל) */
 .overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
   background: rgba(0,0,0,0.5);
   display: none;
-  z-index: 998; /* מעט מתחת ל-Header */
+  z-index: 998;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -113,36 +113,36 @@ html, body {
   opacity: 1;
 }
 
-/********************************************
-  3) HERO SECTION (with BG video/image)
-********************************************/
+/* -----------------------------------------------------
+  3) HERO (image/video background)
+------------------------------------------------------ */
 .hero {
   position: relative;
   min-height: 80vh;
-  padding-top: 64px; /* כדי שה-Header לא יסתיר */
+  padding-top: 64px;
   overflow: hidden;
 }
 
-/* מיכל הרקע (וידאו/תמונה) */
 .hero-bg {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
+  top: 0; 
+  left: 0;
+  width: 100%; 
   height: 100%;
   overflow: hidden;
-  z-index: 0; /* הרקע מאחורה */
+  z-index: 0;
 }
 
-/* אם נרצה <video> או <img> */
-.bg-video, .bg-image {
+.bg-video,
+.bg-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* מילוי מלא רספונסיבי */
+  object-fit: cover;
 }
 
 .hero-content {
-  position: relative; 
-  z-index: 1; /* מעל הרקע */
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -180,14 +180,15 @@ html, body {
   flex: 1 1 300px;
   text-align: center;
 }
+
 .hero-image img {
   max-width: 100%;
   height: auto;
 }
 
-/********************************************
-  4) BUTTONS & LINKS
-********************************************/
+/* -----------------------------------------------------
+  4) BUTTONS
+------------------------------------------------------ */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -219,9 +220,9 @@ html, body {
   transform: translateY(-2px);
 }
 
-/********************************************
-  5) GENERAL SECTIONS STYLING
-********************************************/
+/* -----------------------------------------------------
+  5) SECTIONS - TITLE / INTRO
+------------------------------------------------------ */
 .section-title {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -239,9 +240,9 @@ html, body {
   color: #f07cab;
 }
 
-/********************************************
-  6) FEATURES SECTION (Example)
-********************************************/
+/* -----------------------------------------------------
+  6) EXAMPLE: FEATURES SECTION
+------------------------------------------------------ */
 .features-section {
   padding: 60px 0;
 }
@@ -275,9 +276,9 @@ html, body {
   color: #666;
 }
 
-/********************************************
-  7) SHOWCASE SECTION (Example)
-********************************************/
+/* -----------------------------------------------------
+  7) SHOWCASE EXAMPLE
+------------------------------------------------------ */
 .showcase-section {
   padding: 60px 0;
 }
@@ -287,21 +288,15 @@ html, body {
   gap: 40px;
   align-items: center;
 }
-.showcase-text {
-  max-width: 600px;
-}
-.showcase-video-wrapper {
-  text-align: center;
-}
 .showcase-video {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/********************************************
-  8) TESTIMONIALS SECTION (Example)
-********************************************/
+/* -----------------------------------------------------
+  8) TESTIMONIALS EXAMPLE
+------------------------------------------------------ */
 .testimonials-section {
   padding: 60px 0;
   text-align: center;
@@ -329,9 +324,9 @@ html, body {
   text-align: right;
 }
 
-/********************************************
-  9) ABOUT SECTION (Example)
-********************************************/
+/* -----------------------------------------------------
+  9) ABOUT SECTION
+------------------------------------------------------ */
 .about-section {
   padding: 60px 0;
 }
@@ -350,9 +345,9 @@ html, body {
   border-radius: 8px;
 }
 
-/********************************************
+/* -----------------------------------------------------
   10) CONTACT SECTION
-********************************************/
+------------------------------------------------------ */
 .contact-section {
   padding: 60px 0;
 }
@@ -361,7 +356,8 @@ html, body {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
-.contact-info, .contact-form {
+.contact-info,
+.contact-form {
   background: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -382,7 +378,7 @@ html, body {
   font-size: 1.2rem;
 }
 
-/* Forms (Contact / Login / Register) */
+/* Forms (also for login/register) */
 form label {
   display: block;
   margin-bottom: 5px;
@@ -407,16 +403,16 @@ input[type="password"]:focus,
 textarea:focus {
   border-color: #f07cab;
   outline: none;
-  box-shadow: 0 0 4px rgba(240, 124, 171, 0.3);
+  box-shadow: 0 0 4px rgba(240,124,171,0.3);
 }
 button[type="submit"].btn {
   background-color: #f07cab;
   color: #fff;
 }
 
-/********************************************
+/* -----------------------------------------------------
   11) CART SECTION
-********************************************/
+------------------------------------------------------ */
 .cart-section {
   padding: 60px 0;
 }
@@ -486,9 +482,9 @@ button[type="submit"].btn {
   margin-top: 15px;
 }
 
-/********************************************
+/* -----------------------------------------------------
   12) GALLERY SECTION
-********************************************/
+------------------------------------------------------ */
 .gallery-section {
   padding: 60px 0;
 }
@@ -528,9 +524,9 @@ button[type="submit"].btn {
   margin-bottom: 4px;
 }
 
-/********************************************
+/* -----------------------------------------------------
   13) CUSTOMIZER SECTION
-********************************************/
+------------------------------------------------------ */
 .customizer-section {
   padding: 60px 0;
 }
@@ -543,7 +539,8 @@ button[type="submit"].btn {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
-.twoD-editor, .threeD-viewer {
+.twoD-editor,
+.threeD-viewer {
   background: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -560,10 +557,12 @@ button[type="submit"].btn {
   display: block;
   margin-bottom: 20px;
 }
-.editor-controls, .advanced-controls {
+.editor-controls,
+.advanced-controls {
   margin-bottom: 15px;
 }
-.editor-controls h4, .advanced-controls h4 {
+.editor-controls h4,
+.advanced-controls h4 {
   margin-bottom: 10px;
   color: #333;
 }
@@ -584,20 +583,23 @@ button[type="submit"].btn {
   margin-bottom: 15px;
   border-radius: 8px;
 }
-/* Responsive */
+
+/* Responsive customizer */
 @media (max-width: 768px) {
   .customizer-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/********************************************
-  14) LOGIN & REGISTER SECTIONS
-********************************************/
-.login-section, .register-section {
+/* -----------------------------------------------------
+  14) LOGIN & REGISTER
+------------------------------------------------------ */
+.login-section,
+.register-section {
   padding: 60px 0;
 }
-.login-form-wrapper, .register-form-wrapper {
+.login-form-wrapper,
+.register-form-wrapper {
   background: #fff;
   border-radius: 10px;
   padding: 30px;
@@ -606,7 +608,8 @@ button[type="submit"].btn {
   box-shadow: 0 1px 5px rgba(0,0,0,0.05);
   text-align: left;
 }
-.login-form .form-group, .register-form .form-group {
+.login-form .form-group,
+.register-form .form-group {
   margin-bottom: 20px;
 }
 .form-footer {
@@ -619,9 +622,9 @@ button[type="submit"].btn {
   font-weight: 600;
 }
 
-/********************************************
+/* -----------------------------------------------------
   15) FOOTER
-********************************************/
+------------------------------------------------------ */
 .site-footer {
   background: #fff;
   border-top: 1px solid #eee;
@@ -654,9 +657,9 @@ button[type="submit"].btn {
   color: #f07cab;
 }
 
-/********************************************
+/* -----------------------------------------------------
   16) TOAST MESSAGES
-********************************************/
+------------------------------------------------------ */
 .toast-message {
   position: fixed;
   top: 20px;
@@ -666,7 +669,7 @@ button[type="submit"].btn {
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  z-index: 9999; /* מעל כל האלמנטים האחרים */
+  z-index: 9999;
   opacity: 0;
   transition: opacity 0.4s, top 0.4s;
 }
@@ -675,10 +678,9 @@ button[type="submit"].btn {
   top: 40px;
 }
 
-/********************************************
-  17) RESPONSIVE - MOBILE NAV
-     (overriding some styles)
-********************************************/
+/* -----------------------------------------------------
+  17) RESPONSIVE NAV, ETC.
+------------------------------------------------------ */
 @media (max-width: 992px) {
   .nav-list {
     display: none;
@@ -689,7 +691,7 @@ button[type="submit"].btn {
     background: #fff;
     flex-direction: column;
     gap: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
   }
   .nav-list.open-menu {
