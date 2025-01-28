@@ -1,11 +1,12 @@
-/* ------------------------------
-   GLOBAL RESETS & BASIC STYLES
------------------------------- */
+/********************************************
+  1) RESET & GLOBAL STYLES
+********************************************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   width: 100%;
   height: 100%;
@@ -13,73 +14,81 @@ html, body {
   background-color: #fefefe;
   color: #333;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden; /* מונע גלילה אופקית */
 }
 
-/* Container utility */
+/* Container Utility */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ------------------------------
-   HEADER & NAVIGATION
------------------------------- */
+/********************************************
+  2) HEADER & NAV
+********************************************/
 .site-header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   background: #fff;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  z-index: 999;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* מעל הכל, שלא יסתיר הרקע של hero */
 }
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 64px;
 }
+
 .rizz-logo {
   font-family: 'Pacifico', cursive;
   font-size: 1.8rem;
-  color: #f07cab; /* צבע ורוד ססגוני */
+  color: #f07cab; /* צבע ורוד-סגלגל */
   text-decoration: none;
   transition: color 0.3s;
 }
+
 .rizz-logo:hover {
   color: #ff5e91;
 }
+
 .nav-bar {
   display: flex;
 }
+
 .nav-list {
   list-style: none;
   display: flex;
   gap: 24px;
 }
+
 .nav-list a {
   text-decoration: none;
   color: #333;
   font-weight: 600;
   transition: color 0.3s;
-  padding: 8px;
+  padding: 8px; /* קצת מרווח לכל לינק */
 }
+
 .nav-list a:hover {
   color: #f07cab;
 }
+
 .nav-list a.active {
   border-bottom: 2px solid #f07cab;
 }
 
-/* Menu Toggle (hamburger) */
+/* Hamburger (Mobile) */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
-  cursor: pointer;
   gap: 4px;
+  cursor: pointer;
 }
 .menu-toggle span {
   width: 26px;
@@ -87,13 +96,15 @@ html, body {
   background: #333;
   transition: all 0.3s;
 }
+
+/* Overlay (רקע אפור לתפריט מובייל) */
 .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.5);
   display: none;
-  z-index: 998;
+  z-index: 998; /* מעט מתחת ל-Header */
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -102,54 +113,69 @@ html, body {
   opacity: 1;
 }
 
-/* ------------------------------
-   HERO SECTIONS
------------------------------- */
+/********************************************
+  3) HERO SECTION (with BG video/image)
+********************************************/
 .hero {
   position: relative;
   min-height: 80vh;
-  padding-top: 64px; /* כדי לא להסתיר ע"י header */
+  padding-top: 64px; /* כדי שה-Header לא יסתיר */
   overflow: hidden;
 }
+
+/* מיכל הרקע (וידאו/תמונה) */
 .hero-bg {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  background: linear-gradient(135deg, #fdf1e6 0%, #ffe9f0 70%);
+  overflow: hidden;
+  z-index: 0; /* הרקע מאחורה */
 }
-.hero-wave {
-  position: absolute;
-  bottom: 0;
+
+/* אם נרצה <video> או <img> */
+.bg-video, .bg-image {
   width: 100%;
-  opacity: 0.5;
+  height: 100%;
+  object-fit: cover; /* מילוי מלא רספונסיבי */
 }
+
 .hero-content {
+  position: relative; 
+  z-index: 1; /* מעל הרקע */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 40px 0;
 }
+
 .hero-text {
   flex: 1 1 400px;
   margin-right: 20px;
 }
+
 .hero-title {
   font-size: 2.5rem;
   line-height: 1.2;
-  color: #333;
   margin-bottom: 20px;
 }
+
 .hero-title span {
-  color: #f07cab; /* הדגשה בצבע */
+  color: #f07cab;
 }
+
 .hero-subtitle {
   font-size: 1.2rem;
   color: #555;
   margin-bottom: 30px;
 }
+
+.hero-centered {
+  text-align: center;
+  justify-content: center;
+}
+
 .hero-image {
   flex: 1 1 300px;
   text-align: center;
@@ -158,15 +184,10 @@ html, body {
   max-width: 100%;
   height: auto;
 }
-.hero-centered {
-  text-align: center;
-}
-.generic-hero .hero-content {
-  justify-content: center;
-  text-align: center;
-}
 
-/* BUTTONS */
+/********************************************
+  4) BUTTONS & LINKS
+********************************************/
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -178,6 +199,7 @@ html, body {
   text-decoration: none;
   text-align: center;
 }
+
 .btn-primary {
   background-color: #f07cab;
   color: #fff;
@@ -187,6 +209,7 @@ html, body {
   background-color: #ff5e91;
   transform: translateY(-2px);
 }
+
 .btn-secondary {
   background-color: #8fc3f9;
   color: #fff;
@@ -196,25 +219,31 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* ------------------------------
-   FEATURES SECTION
------------------------------- */
-.features-section, .showcase-section, .testimonials-section {
-  padding: 60px 0;
-}
+/********************************************
+  5) GENERAL SECTIONS STYLING
+********************************************/
 .section-title {
   font-size: 2rem;
-  color: #333;
   margin-bottom: 10px;
+  color: #333;
   text-align: center;
 }
-.highlight {
-  color: #f07cab;
-}
+
 .section-intro {
   text-align: center;
   color: #666;
   margin-bottom: 40px;
+}
+
+.highlight {
+  color: #f07cab;
+}
+
+/********************************************
+  6) FEATURES SECTION (Example)
+********************************************/
+.features-section {
+  padding: 60px 0;
 }
 .features-grid {
   display: grid;
@@ -246,7 +275,12 @@ html, body {
   color: #666;
 }
 
-/* SHOWCASE */
+/********************************************
+  7) SHOWCASE SECTION (Example)
+********************************************/
+.showcase-section {
+  padding: 60px 0;
+}
 .showcase-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -265,7 +299,13 @@ html, body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* TESTIMONIALS */
+/********************************************
+  8) TESTIMONIALS SECTION (Example)
+********************************************/
+.testimonials-section {
+  padding: 60px 0;
+  text-align: center;
+}
 .testimonials-slider {
   display: flex;
   flex-direction: column;
@@ -289,118 +329,30 @@ html, body {
   text-align: right;
 }
 
-/* ------------------------------
-   FOOTER
------------------------------- */
-.site-footer {
-  background: #fff;
-  border-top: 1px solid #eee;
-  margin-top: 40px;
-  padding: 30px 0;
+/********************************************
+  9) ABOUT SECTION (Example)
+********************************************/
+.about-section {
+  padding: 60px 0;
 }
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   align-items: center;
-  justify-content: space-between;
 }
-.footer-logo .rizz-logo {
-  font-size: 1.5rem;
-  color: #f07cab;
+.about-text p {
+  margin-bottom: 15px;
+  color: #555;
 }
-.footer-nav {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-.footer-nav a {
-  color: #333;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-.footer-nav a:hover {
-  color: #f07cab;
-}
-copyright {
-  color: #999;
-  font-size: 0.9rem;
-  margin-top: 10px;
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
 }
 
-/* ------------------------------
-   RESPONSIVE MEDIA QUERIES
------------------------------- */
-
-/* Mobile-first approach:
-   (כברירת מחדל, ה- .nav-list מוחבא בגדלים קטנים, ומופיע רק ב-menuToggle) */
-
-@media (max-width: 992px) {
-  /* Header */
-  .nav-list {
-    display: none; /* מוחבא - יפתח עם JS כשילחצו על ה-menu-toggle */
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    gap: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-  .nav-list.open-menu {
-    display: flex;
-  }
-  .nav-list li {
-    border-bottom: 1px solid #eee;
-  }
-  .nav-list a {
-    display: block;
-    padding: 15px;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-
-  /* Hero Grid -> Stack */
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-text {
-    margin-right: 0;
-  }
-  .hero-image {
-    margin-top: 20px;
-  }
-
-  /* Showcase grid -> stack */
-  .showcase-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-  .btn {
-    font-size: 0.95rem;
-  }
-}
-
-/* ------------------------------
-   עיצובים ספציפיים לעמודים אחרים כמו:
-   contact forms, login/register forms, cart, gallery, etc.
-   נראה בהמשך
------------------------------- */
-
-/* CONTACT */
+/********************************************
+  10) CONTACT SECTION
+********************************************/
 .contact-section {
   padding: 60px 0;
 }
@@ -430,7 +382,7 @@ copyright {
   font-size: 1.2rem;
 }
 
-/* FORMS (Login, Register, Contact) */
+/* Forms (Contact / Login / Register) */
 form label {
   display: block;
   margin-bottom: 5px;
@@ -455,14 +407,20 @@ input[type="password"]:focus,
 textarea:focus {
   border-color: #f07cab;
   outline: none;
+  box-shadow: 0 0 4px rgba(240, 124, 171, 0.3);
 }
 button[type="submit"].btn {
   background-color: #f07cab;
   color: #fff;
 }
 
-/* CART */
-.cart-section .cart-grid {
+/********************************************
+  11) CART SECTION
+********************************************/
+.cart-section {
+  padding: 60px 0;
+}
+.cart-grid {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -528,8 +486,13 @@ button[type="submit"].btn {
   margin-top: 15px;
 }
 
-/* GALLERY */
-.gallery-section .gallery-grid {
+/********************************************
+  12) GALLERY SECTION
+********************************************/
+.gallery-section {
+  padding: 60px 0;
+}
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
   gap: 20px;
@@ -545,6 +508,7 @@ button[type="submit"].btn {
 .gallery-image {
   width: 100%;
   display: block;
+  object-fit: cover;
 }
 .gallery-overlay {
   position: absolute;
@@ -564,7 +528,9 @@ button[type="submit"].btn {
   margin-bottom: 4px;
 }
 
-/* CUSTOMIZER */
+/********************************************
+  13) CUSTOMIZER SECTION
+********************************************/
 .customizer-section {
   padding: 60px 0;
 }
@@ -601,8 +567,8 @@ button[type="submit"].btn {
   margin-bottom: 10px;
   color: #333;
 }
-.editor-controls button.btn-secondary,
-.advanced-controls button.btn-secondary {
+.editor-controls .btn-secondary,
+.advanced-controls .btn-secondary {
   background-color: #8fc3f9;
   margin-right: 10px;
 }
@@ -618,8 +584,16 @@ button[type="submit"].btn {
   margin-bottom: 15px;
   border-radius: 8px;
 }
+/* Responsive */
+@media (max-width: 768px) {
+  .customizer-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
-/* LOGIN / REGISTER */
+/********************************************
+  14) LOGIN & REGISTER SECTIONS
+********************************************/
 .login-section, .register-section {
   padding: 60px 0;
 }
@@ -645,14 +619,110 @@ button[type="submit"].btn {
   font-weight: 600;
 }
 
-/* ------------------------------
-   EXTRA SMALL SCREEN OVERRIDES
------------------------------- */
-@media (max-width: 768px) {
-  .customizer-grid,
-  .about-grid,
-  .why-rizz-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
+/********************************************
+  15) FOOTER
+********************************************/
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+  padding: 30px 0;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-logo .rizz-logo {
+  font-size: 1.5rem;
+  color: #f07cab;
+}
+.footer-nav {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.footer-nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.footer-nav a:hover {
+  color: #f07cab;
+}
+
+/********************************************
+  16) TOAST MESSAGES
+********************************************/
+.toast-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f07cab;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999; /* מעל כל האלמנטים האחרים */
+  opacity: 0;
+  transition: opacity 0.4s, top 0.4s;
+}
+.toast-message.show {
+  opacity: 1;
+  top: 40px;
+}
+
+/********************************************
+  17) RESPONSIVE - MOBILE NAV
+     (overriding some styles)
+********************************************/
+@media (max-width: 992px) {
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  .nav-list.open-menu {
+    display: flex;
+  }
+  .nav-list li {
+    border-bottom: 1px solid #eee;
+  }
+  .nav-list a {
+    display: block;
+    padding: 15px;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text {
+    margin-right: 0;
+  }
+  .hero-image {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .btn {
+    font-size: 0.95rem;
   }
 }

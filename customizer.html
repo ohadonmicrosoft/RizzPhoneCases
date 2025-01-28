@@ -11,7 +11,7 @@
   <meta name="author" content="Rizz" />
   <title>Rizz | Customizer</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (Nunito & Pacifico) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
     rel="stylesheet"
@@ -50,16 +50,21 @@
     <div id="overlay" class="overlay"></div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero generic-hero">
+  <!-- HERO SECTION עם יכולת להחליף וידאו/תמונה -->
+  <section class="hero" style="margin-bottom:0;"> 
     <div class="hero-bg">
-      <img src="assets/images/w-bg.svg" alt="Wave background" class="hero-wave"/>
+      <!-- 
+         כאן ב-Comment Out:
+         <video autoplay muted loop playsinline src="assets/videos/bg-video.mp4" class="bg-video"></video>
+         או:
+         <img src="assets/images/hero-bg.jpg" alt="Hero Background" class="bg-image"/>
+      -->
     </div>
-    <div class="container hero-content">
-      <div class="hero-text hero-centered">
-        <h1 class="hero-title">Design Beyond Boundaries <br/><span>Personalize Every Edge</span></h1>
+    <div class="container hero-content hero-centered">
+      <div class="hero-text">
+        <h1 class="hero-title">Design Beyond Boundaries<br/><span>Personalize Every Edge</span></h1>
         <p class="hero-subtitle">
-          Create immersive 3D phone wraps with our intuitive tools and real-time previews. <br/>
+          Create immersive 3D phone wraps with our intuitive tools and real-time previews.<br/>
           Elevate your design game today!
         </p>
         <a href="#customizerSection" class="btn btn-primary" style="margin-top:20px;">Start Creating</a>
@@ -115,7 +120,7 @@
           <div class="advanced-controls" style="margin-top:20px;">
             <h4>Advanced Tools</h4>
             <button id="addShapeBtn" class="btn btn-secondary">
-              <i class="fas fa-square"></i> Add Shape
+              <i class="fas fa-shapes"></i> Add Shape
             </button>
             <button id="addGradientBtn" class="btn btn-secondary">
               <i class="fas fa-paint-brush"></i> Gradient
@@ -145,20 +150,20 @@
     <p class="section-intro">
       Our intuitive dashboard, real-time 3D viewer, and robust editing tools make phone customization easier than ever.
     </p>
-    <div class="features-grid">
-      <div class="feature-item">
-        <i class="fas fa-cube icon"></i>
-        <h3>Immersive 3D Previews</h3>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px;">
+      <div style="background:#fff; border-radius:8px; box-shadow:0 1px 5px rgba(0,0,0,0.1); padding:20px; text-align:center;">
+        <i class="fas fa-cube" style="font-size:2rem; color:#f07cab;"></i>
+        <h3 style="margin:10px 0; color:#333;">Immersive 3D Previews</h3>
         <p>See every angle of your design with our powerful 3D viewer.</p>
       </div>
-      <div class="feature-item">
-        <i class="fas fa-paint-brush icon"></i>
-        <h3>Advanced Editing Tools</h3>
+      <div style="background:#fff; border-radius:8px; box-shadow:0 1px 5px rgba(0,0,0,0.1); padding:20px; text-align:center;">
+        <i class="fas fa-paint-brush" style="font-size:2rem; color:#f07cab;"></i>
+        <h3 style="margin:10px 0; color:#333;">Advanced Editing Tools</h3>
         <p>From gradients to custom shapes, your creativity knows no limits.</p>
       </div>
-      <div class="feature-item">
-        <i class="fas fa-thumbs-up icon"></i>
-        <h3>Easy-to-Use Interface</h3>
+      <div style="background:#fff; border-radius:8px; box-shadow:0 1px 5px rgba(0,0,0,0.1); padding:20px; text-align:center;">
+        <i class="fas fa-thumbs-up" style="font-size:2rem; color:#f07cab;"></i>
+        <h3 style="margin:10px 0; color:#333;">Easy-to-Use Interface</h3>
         <p>Designing is fun and accessible to everyone, no prior skills needed.</p>
       </div>
     </div>
@@ -178,16 +183,17 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="cart.html">Cart</a></li>
       </ul>
-      <p class="copyright">
+      <p style="margin-top:10px; color:#999; font-size:0.9rem;">
         &copy; 2025 Rizz. All Rights Reserved.
       </p>
     </div>
   </footer>
 
-  <!-- JS -->
-  <!-- Fabric.js CDN -->
+  <!-- TOAST DIV (נוצר ע"י customizer.js) -->
+  <!-- לא חובה כאן, אבל ניתן להשאיר ריק. customizer.js מייצר בעצמו את האלמנט. -->
+
+  <!-- FABRIC.JS, THREE.JS SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.6.0/fabric.min.js"></script>
-  <!-- Three.js + additional scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r131/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r131/examples/js/controls/OrbitControls.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r131/examples/js/loaders/GLTFLoader.js"></script>
@@ -195,6 +201,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r131/examples/js/postprocessing/RenderPass.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r131/examples/js/postprocessing/UnrealBloomPass.js"></script>
 
+  <!-- SITE JS -->
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
   <script src="js/customizer.js"></script>

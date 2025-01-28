@@ -1,7 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // יצירת Toast Container במעלה הדף
+  let toastDiv = document.createElement("div");
+  toastDiv.className = "toast-message";
+  document.body.appendChild(toastDiv);
+
+  function showToast(msg) {
+    toastDiv.textContent = msg;
+    toastDiv.classList.add("show");
+    setTimeout(() => {
+      toastDiv.classList.remove("show");
+    }, 2000);
+  }
+
   const canvas = new fabric.Canvas("caseCanvas");
 
-  // Example: Upload image
+  // Upload Image
   const uploadImageBtn = document.getElementById("uploadImageBtn");
   if (uploadImageBtn) {
     uploadImageBtn.addEventListener("click", () => {
@@ -16,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
           fabric.Image.fromURL(reader.result, (img) => {
             img.scaleToWidth(canvas.width / 2);
             canvas.add(img);
+            showToast("Image added to canvas.");
           });
         };
         reader.readAsDataURL(file);
@@ -30,9 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
     addTextBtn.addEventListener("click", () => {
       const textObj = new fabric.Text("Custom Text", {
         fontSize: 24,
-        fill: "#333",
+        fill: "#333"
       });
       canvas.add(textObj).setActiveObject(textObj);
+      showToast("Text added to canvas.");
     });
   }
 
@@ -55,43 +70,61 @@ document.addEventListener("DOMContentLoaded", () => {
       if (activeObj && activeObj.type === "text") {
         activeObj.set("fontFamily", e.target.value);
         canvas.renderAll();
+        showToast(`Font changed to ${e.target.value}`);
       }
     });
   }
 
-  // Add Shape (Rect for example)
+  // Add Shape
   const addShapeBtn = document.getElementById("addShapeBtn");
   if (addShapeBtn) {
     addShapeBtn.addEventListener("click", () => {
-      const rect = new fabric.Rect({
-        width: 100,
-        height: 100,
-        fill: colorPicker.value || "#333",
-      });
-      canvas.add(rect).setActiveObject(rect);
+      const shapeType = prompt("Enter shape type: rect or circle", "rect");
+      let shape;
+      if (shapeType === "circle") {
+        shape = new fabric.Circle({
+          radius: 50,
+          fill: colorPicker ? colorPicker.value : "#333",
+          left: 100,
+          top: 100
+        });
+      } else {
+        // Default rect
+        shape = new fabric.Rect({
+          width: 100,
+          height: 100,
+          fill: colorPicker ? colorPicker.value : "#333",
+          left: 100,
+          top: 100
+        });
+      }
+      canvas.add(shape).setActiveObject(shape);
+      showToast(`${shapeType} shape added to canvas.`);
     });
   }
 
-  // Gradient example
+  // Gradient
   const addGradientBtn = document.getElementById("addGradientBtn");
   if (addGradientBtn) {
     addGradientBtn.addEventListener("click", () => {
       const activeObj = canvas.getActiveObject();
-      if (!activeObj || activeObj.type !== "rect") {
-        alert("Select a rectangle shape first!");
+      if (!activeObj || (activeObj.type !== "rect" && activeObj.type !== "circle")) {
+        showToast("Select a rectangle or circle first!");
         return;
       }
+      // apply gradient
       activeObj.setGradient("fill", {
         x1: 0,
         y1: 0,
-        x2: activeObj.width,
-        y2: activeObj.height,
+        x2: activeObj.width || (activeObj.radius * 2),
+        y2: activeObj.height || (activeObj.radius * 2),
         colorStops: {
           0: "#f07cab",
           1: "#8fc3f9",
         },
       });
       canvas.renderAll();
+      showToast("Gradient applied to shape!");
     });
   }
 
@@ -99,8 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearCanvasBtn = document.getElementById("clearCanvasBtn");
   if (clearCanvasBtn) {
     clearCanvasBtn.addEventListener("click", () => {
-      if (confirm("Clear the canvas?")) {
+      if (confirm("Clear the entire canvas?")) {
         canvas.clear();
+        showToast("Canvas cleared.");
       }
     });
   }
@@ -112,9 +146,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const dataURL = canvas.toDataURL();
       if (window.updateCaseTexture) {
         window.updateCaseTexture(dataURL);
-        alert("Design synced to 3D viewer!");
+        showToast("Design synced to 3D viewer!");
       } else {
-        alert("3D sync not available.");
+        showToast("3D sync function not available.");
       }
     });
   }
