@@ -241,7 +241,7 @@ html, body {
 }
 
 /* -----------------------------------------------------
-  6) EXAMPLE: FEATURES SECTION
+  6) FEATURES SECTION (example)
 ------------------------------------------------------ */
 .features-section {
   padding: 60px 0;
@@ -584,7 +584,6 @@ button[type="submit"].btn {
   border-radius: 8px;
 }
 
-/* Responsive customizer */
 @media (max-width: 768px) {
   .customizer-grid {
     grid-template-columns: 1fr;

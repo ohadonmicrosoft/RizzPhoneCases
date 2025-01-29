@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
       menuToggle.classList.toggle("open");
       navList.classList.toggle("open-menu");
-
       if (overlay.classList.contains("show")) {
         overlay.classList.remove("show");
         document.body.style.overflow = "auto";
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Close menu on overlay click
   if (overlay) {
     overlay.addEventListener("click", () => {
       overlay.classList.remove("show");

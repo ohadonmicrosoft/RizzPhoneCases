@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Review and purchase your custom 3D phone wraps" />
   <title>Rizz | Cart</title>
 
-  <!-- Google Fonts (Nunito & Pacifico) -->
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
     rel="stylesheet"
   />
-
   <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
-
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css"/>
 </head>
@@ -46,69 +43,72 @@
     <div id="overlay" class="overlay"></div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero generic-hero">
+  <!-- HERO SECTION -->
+  <section class="hero">
     <div class="hero-bg">
-      <img src="assets/images/w-bg.svg" alt="Wave background" class="hero-wave"/>
+      <!-- 
+        <video autoplay muted loop playsinline src="assets/videos/bg-video.mp4" class="bg-video"></video>
+        Or:
+        <img src="assets/images/hero-bg.jpg" alt="Hero Background" class="bg-image"/>
+      -->
     </div>
-    <div class="container hero-content">
-      <div class="hero-text hero-centered">
-        <h1 class="hero-title">Your Shopping Cart <br/><span>Review Your Selection</span></h1>
+    <div class="container hero-content hero-centered">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Your Shopping Cart<br/><span>Review Your Selection</span>
+        </h1>
         <p class="hero-subtitle">
-          Finalize your 3D phone wrap designs before checkout. Let's get your style ready.
+          Finalize your 3D phone wrap designs before checkout.
         </p>
       </div>
     </div>
   </section>
 
   <!-- CART SECTION -->
-  <section class="cart-section container">
-    <h2 class="section-title">Items in Your Cart</h2>
-
-    <!-- Cart Items -->
-    <div class="cart-grid">
-      <!-- Cart Item 1 -->
-      <div class="cart-item">
-        <img src="assets/images/design1-thumb.jpg" alt="Design 1" class="cart-item-image" />
-        <div class="cart-item-info">
-          <h3 class="cart-item-title">Neon Swirls Wrap</h3>
-          <p>Device: iPhone 14</p>
-          <p>Price: <strong>$49.99</strong></p>
+  <section class="cart-section">
+    <div class="container">
+      <h2 class="section-title">Items in Your Cart</h2>
+      <div class="cart-grid">
+        <!-- Example cart item 1 -->
+        <div class="cart-item">
+          <img src="assets/images/design1-thumb.jpg" alt="Design 1" class="cart-item-image"/>
+          <div class="cart-item-info">
+            <h3 class="cart-item-title">Neon Swirls Wrap</h3>
+            <p>Device: iPhone 14</p>
+            <p>Price: <strong>$49.99</strong></p>
+          </div>
+          <div class="cart-item-actions">
+            <input type="number" class="quantity-input" value="1" min="1"/>
+            <button class="remove-item-btn">Remove</button>
+          </div>
         </div>
-        <div class="cart-item-actions">
-          <input type="number" class="quantity-input" value="1" min="1"/>
-          <button class="remove-item-btn">Remove</button>
+        <!-- Example cart item 2 -->
+        <div class="cart-item">
+          <img src="assets/images/design2-thumb.jpg" alt="Design 2" class="cart-item-image"/>
+          <div class="cart-item-info">
+            <h3 class="cart-item-title">Futuristic Grid Wrap</h3>
+            <p>Device: Samsung S22</p>
+            <p>Price: <strong>$54.99</strong></p>
+          </div>
+          <div class="cart-item-actions">
+            <input type="number" class="quantity-input" value="1" min="1"/>
+            <button class="remove-item-btn">Remove</button>
+          </div>
         </div>
       </div>
 
-      <!-- Cart Item 2 -->
-      <div class="cart-item">
-        <img src="assets/images/design2-thumb.jpg" alt="Design 2" class="cart-item-image" />
-        <div class="cart-item-info">
-          <h3 class="cart-item-title">Futuristic Grid Wrap</h3>
-          <p>Device: Samsung S22</p>
-          <p>Price: <strong>$54.99</strong></p>
+      <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-details" style="margin-top:15px;">
+          <p>Subtotal: <strong>$104.98</strong></p>
+          <p>Shipping: <strong>$5.00</strong></p>
+          <p>Total: <strong>$109.98</strong></p>
         </div>
-        <div class="cart-item-actions">
-          <input type="number" class="quantity-input" value="1" min="1"/>
-          <button class="remove-item-btn">Remove</button>
-        </div>
+        <button class="btn btn-primary checkout-btn" style="margin-top:20px;">Proceed to Checkout</button>
       </div>
-    </div>
-
-    <!-- Cart Summary -->
-    <div class="cart-summary" style="margin-top:30px;">
-      <h3>Order Summary</h3>
-      <div class="summary-details" style="margin-top:15px;">
-        <p>Subtotal: <strong>$104.98</strong></p>
-        <p>Shipping: <strong>$5.00</strong></p>
-        <p>Total: <strong>$109.98</strong></p>
-      </div>
-      <button class="btn btn-primary checkout-btn" style="margin-top:20px;">Proceed to Checkout</button>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-logo">
@@ -128,7 +128,6 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
 </body>

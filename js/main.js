@@ -1,21 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Basic form validation for Login
+  // Basic form validations
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const email = document.getElementById("loginEmail").value.trim();
       const pass = document.getElementById("loginPassword").value.trim();
-
       if (validateEmail(email) && pass.length >= 6) {
         alert("Login successful!");
       } else {
-        alert("Please enter valid credentials.");
+        alert("Please enter valid login credentials.");
       }
     });
   }
 
-  // Register form
   const registerForm = document.getElementById("registerForm");
   if (registerForm) {
     registerForm.addEventListener("submit", (e) => {
@@ -33,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Contact form
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
@@ -50,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Simple email validator
   function validateEmail(email) {
     const re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     return re.test(email.toLowerCase());

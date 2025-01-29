@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // יצירת Toast Container במעלה הדף
+  // Toast container
   let toastDiv = document.createElement("div");
   toastDiv.className = "toast-message";
   document.body.appendChild(toastDiv);
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const canvas = new fabric.Canvas("caseCanvas");
 
-  // Upload Image
   const uploadImageBtn = document.getElementById("uploadImageBtn");
   if (uploadImageBtn) {
     uploadImageBtn.addEventListener("click", () => {
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add Text
   const addTextBtn = document.getElementById("addTextBtn");
   if (addTextBtn) {
     addTextBtn.addEventListener("click", () => {
@@ -51,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Color picker
   const colorPicker = document.getElementById("colorPicker");
   if (colorPicker) {
     colorPicker.addEventListener("input", (e) => {
@@ -62,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Font select
   const fontSelect = document.getElementById("fontSelect");
   if (fontSelect) {
     fontSelect.addEventListener("change", (e) => {
@@ -75,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add Shape
   const addShapeBtn = document.getElementById("addShapeBtn");
   if (addShapeBtn) {
     addShapeBtn.addEventListener("click", () => {
@@ -89,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
           top: 100
         });
       } else {
-        // Default rect
         shape = new fabric.Rect({
           width: 100,
           height: 100,
@@ -103,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Gradient
   const addGradientBtn = document.getElementById("addGradientBtn");
   if (addGradientBtn) {
     addGradientBtn.addEventListener("click", () => {
@@ -112,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
         showToast("Select a rectangle or circle first!");
         return;
       }
-      // apply gradient
       activeObj.setGradient("fill", {
         x1: 0,
         y1: 0,
@@ -124,22 +116,20 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
       canvas.renderAll();
-      showToast("Gradient applied to shape!");
+      showToast("Gradient applied!");
     });
   }
 
-  // Clear Canvas
   const clearCanvasBtn = document.getElementById("clearCanvasBtn");
   if (clearCanvasBtn) {
     clearCanvasBtn.addEventListener("click", () => {
-      if (confirm("Clear the entire canvas?")) {
+      if (confirm("Clear entire canvas?")) {
         canvas.clear();
         showToast("Canvas cleared.");
       }
     });
   }
 
-  // Sync to 3D
   const sync3DTextureBtn = document.getElementById("sync3DTextureBtn");
   if (sync3DTextureBtn) {
     sync3DTextureBtn.addEventListener("click", () => {

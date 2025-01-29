@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rizz - The Ultimate 3D Phone Wrap Experience" />
-  <meta name="keywords" content="3D, Phone Wraps, Customization, Rizz" />
-  <meta name="author" content="Rizz" />
-  <title>Rizz | The Future of Phone Customization</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Rizz - The Ultimate 3D Phone Wrap Experience"/>
+  <title>Rizz | Home</title>
 
-  <!-- Google Fonts -->
-  <!-- Nunito (לגוף הטקסט) + Pacifico (ללוגו) -->
+  <!-- Google Fonts: Nunito + Pacifico -->
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
     rel="stylesheet"
   />
-
-  <!-- Font Awesome (Icons) -->
+  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
-
   <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-container">
+      <!-- Logo -->
       <div class="logo">
-        <!-- לוגו מעוצב בטיפוגרפיה Pacifico -->
         <a href="index.html" class="rizz-logo">Rizz</a>
       </div>
+      <!-- Navigation -->
       <nav class="nav-bar">
         <ul class="nav-list">
           <li><a href="index.html" class="active">Home</a></li>
@@ -43,10 +39,12 @@
           <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
+      <!-- Mobile menu toggle -->
       <div class="menu-toggle" id="menuToggle">
         <span></span><span></span><span></span>
       </div>
     </div>
+    <!-- Overlay for mobile nav -->
     <div id="overlay" class="overlay"></div>
   </header>
 
@@ -54,101 +52,62 @@
   <section class="hero">
     <div class="hero-bg">
       <!--
+        Uncomment one of the following to set the background:
+        
         <video autoplay muted loop playsinline src="assets/videos/bg-video.mp4" class="bg-video"></video>
-        Or:
-        -->
-        <img src="assets/images/Untitled.jpg" alt="Hero Background" class="bg-image"/>
+        
+        or
+        
+        <img src="assets/images/hero-bg.jpg" alt="Hero Background" class="bg-image"/>
+      -->
     </div>
     <div class="container hero-content">
       <div class="hero-text">
-        <h1 class="hero-title">Transform Your Phone <br/><span>with 3D Wraps</span></h1>
+        <h1 class="hero-title">
+          Transform Your Phone<br/>
+          <span>with 3D Wraps</span>
+        </h1>
         <p class="hero-subtitle">
-          Custom phone wraps that redefine style and functionality. Design your way.
+          Custom phone wraps that redefine style and functionality. <br/>
+          Design your way.
         </p>
-        <a href="customizer.html" class="btn btn-primary" style="margin-top:10px;">Start Customizing</a>
+        <a href="customizer.html" class="btn btn-primary" style="margin-top:10px;">
+          Start Customizing
+        </a>
       </div>
       <div class="hero-image">
-        <img src="assets/images/hero-phone.png" alt="3D Phone"/>
+        <img src="assets/images/hero-phone.png" alt="3D Phone" />
       </div>
     </div>
   </section>
 
-  <!-- FEATURES SECTION -->
+  <!-- EXAMPLE FEATURES SECTION -->
   <section class="features-section">
     <div class="container">
       <h2 class="section-title">Why Choose <span class="highlight">Rizz?</span></h2>
       <p class="section-intro">
-        We bring you the next level of phone customization with vibrant designs, <br/>
-        advanced tools, and a user-friendly experience.
+        We bring you next-level phone customization with vibrant designs and advanced tools.
       </p>
       <div class="features-grid">
         <div class="feature-item">
-          <i class="fas fa-mobile-screen-button icon"></i>
+          <i class="fas fa-mobile-alt icon"></i>
           <h3>Immersive 3D Wraps</h3>
-          <p>Get full edge-to-edge designs that truly transform your phone.</p>
+          <p>Edge-to-edge designs that truly transform your device.</p>
         </div>
         <div class="feature-item">
           <i class="fas fa-palette icon"></i>
           <h3>Endless Customization</h3>
-          <p>Unleash your creativity with advanced design tools and templates.</p>
+          <p>Advanced tools and templates to unleash your creativity.</p>
         </div>
         <div class="feature-item">
-          <i class="fas fa-shield-halved icon"></i>
+          <i class="fas fa-shield-alt icon"></i>
           <h3>Durable Materials</h3>
-          <p>Built for both style and protection, with premium materials.</p>
+          <p>Style and protection, wrapped in premium quality.</p>
         </div>
         <div class="feature-item">
-          <i class="fas fa-seedling icon"></i>
+          <i class="fas fa-leaf icon"></i>
           <h3>Eco-Friendly</h3>
-          <p>We care about sustainability, using recyclable materials.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SHOWCASE SECTION -->
-  <section class="showcase-section">
-    <div class="container showcase-grid">
-      <div class="showcase-text">
-        <h2 class="section-title">Experience the Difference</h2>
-        <p class="section-intro">
-          See your designs come to life in real-time with our 3D viewer. 
-          From every angle, your phone will shine.
-        </p>
-        <a href="gallery.html" class="btn btn-secondary">Explore Gallery</a>
-      </div>
-      <div class="showcase-video-wrapper">
-        <video autoplay muted loop playsinline class="showcase-video">
-          <source src="assets/videos/showcase.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS SECTION -->
-  <section class="testimonials-section">
-    <div class="container">
-      <h2 class="section-title">What Our Customers Say</h2>
-      <div class="testimonials-slider">
-        <div class="testimonial">
-          <div class="testimonial-content">
-            <p>
-              "Rizz transformed my phone into a unique piece of art. Absolutely love it!"
-            </p>
-          </div>
-          <h4 class="testimonial-author">- Sarah K.</h4>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-content">
-            <p>"The customization process was so easy, and the results are stunning."</p>
-          </div>
-          <h4 class="testimonial-author">- Mark L.</h4>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-content">
-            <p>"I get compliments on my phone case all the time. Highly recommended!"</p>
-          </div>
-          <h4 class="testimonial-author">- Emily R.</h4>
+          <p>Committed to sustainability and recyclable materials.</p>
         </div>
       </div>
     </div>
@@ -168,13 +127,13 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="cart.html">Cart</a></li>
       </ul>
-      <p class="copyright">
+      <p style="margin-top:10px; color:#999; font-size:0.9rem;">
         &copy; 2025 Rizz. All Rights Reserved.
       </p>
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- JS Scripts -->
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
 </body>

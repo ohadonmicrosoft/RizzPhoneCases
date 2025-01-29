@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const threeDContainer = document.getElementById("threeDContainer");
   if (!threeDContainer) return;
 
-  // Basic Three.js setup
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x000000);
 
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   threeDContainer.appendChild(renderer.domElement);
 
-  // Lights
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
   scene.add(ambientLight);
 
@@ -30,12 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
   spotLight.castShadow = true;
   scene.add(spotLight);
 
-  // Optionally add a directional light
   const directionalLight = new THREE.DirectionalLight(0x0d7377, 0.5);
   directionalLight.position.set(-5, 5, 5);
   scene.add(directionalLight);
 
-  // Phone Model
   let phoneModel = null;
   let caseMesh = null;
 
@@ -54,11 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     undefined,
     (error) => {
-      console.error("Error loading 3D phone wrap model:", error);
+      console.error("Error loading phone model:", error);
     }
   );
 
-  // Orbit Controls
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
@@ -66,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   controls.minDistance = 1.5;
   controls.maxDistance = 5;
 
-  // PostProcessing
   const composer = new THREE.EffectComposer(renderer);
   const renderPass = new THREE.RenderPass(scene, camera);
   composer.addPass(renderPass);
@@ -98,10 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     composer.setSize(threeDContainer.clientWidth, threeDContainer.clientHeight);
   });
 
-  // Expose function to update texture from customizer.js
   window.updateCaseTexture = function (dataURL) {
     if (!caseMesh) {
-      console.warn("Case mesh not found in the model!");
+      console.warn("Case mesh not found!");
       return;
     }
     const textureLoader = new THREE.TextureLoader();
@@ -110,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tex.wrapT = THREE.RepeatWrapping;
       caseMesh.material.map = tex;
       caseMesh.material.needsUpdate = true;
-      console.log("Case texture updated from 2D canvas.");
+      console.log("Case texture updated with user design.");
     });
   };
 });

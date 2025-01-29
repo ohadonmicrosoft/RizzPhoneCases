@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rizz | About Us</title>
+  <title>Rizz | About</title>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
     rel="stylesheet"
@@ -12,7 +13,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
   <header class="site-header">
@@ -38,72 +39,42 @@
     <div id="overlay" class="overlay"></div>
   </header>
 
-  <section class="hero generic-hero">
+  <section class="hero">
     <div class="hero-bg">
-      <img src="assets/images/w-bg.svg" alt="Wave background" class="hero-wave"/>
+      <!--
+        <video autoplay muted loop playsinline src="assets/videos/bg-video.mp4" class="bg-video"></video>
+        Or:
+        <img src="assets/images/hero-bg.jpg" alt="Background" class="bg-image"/>
+      -->
     </div>
+    <div class="container hero-content hero-centered">
+      <div class="hero-text">
+        <h1 class="hero-title">Discover Rizz<br/><span>Innovation & Creativity</span></h1>
+        <p class="hero-subtitle">We empower bold, custom 3D designs that speak your style.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
     <div class="container">
-      <div class="hero-text hero-centered">
-        <h1 class="hero-title">Discover Rizz <br/><span>Innovation. Creativity. Style.</span></h1>
-        <p class="hero-subtitle">
-          At Rizz, we believe in empowering individuals to express their style with bold, custom 3D designs.
-        </p>
+      <h2 class="section-title">Who We Are</h2>
+      <p class="section-intro">Rizz is more than just a brand—it's a movement in phone customization.</p>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Our cutting-edge 3D technology allows you to wrap every edge of your phone with your unique style.
+          </p>
+          <p>
+            Whether you're looking to stand out from the crowd or just protect your device in style, Rizz has you covered.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="assets/images/our-story.jpg" alt="Our Story"/>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About Content -->
-  <section class="about-section container">
-    <h2 class="section-title">Who We Are</h2>
-    <p class="section-intro">
-      Rizz is more than just a brand. We’re a movement in the world of phone customization, bridging the gap 
-      between technology and personal expression...
-    </p>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          Our cutting-edge 3D wrap technology allows us to go beyond the surface, wrapping your unique design 
-          around every edge and corner...
-        </p>
-        <p>
-          Whether you're looking to express your bold personality, stand out from the crowd, or simply protect 
-          your device in style, Rizz has got you covered.
-        </p>
-      </div>
-      <div class="about-image">
-        <img src="assets/images/our-story.jpg" alt="Our Story"/>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE RIZZ -->
-  <section class="why-rizz-section container">
-    <h2 class="section-title">Why Choose Rizz?</h2>
-    <div class="why-rizz-grid">
-      <div class="rizz-feature-card">
-        <i class="fas fa-cogs icon"></i>
-        <h3>Next-Level Customization</h3>
-        <p>Create truly one-of-a-kind designs with advanced tools.</p>
-      </div>
-      <div class="rizz-feature-card">
-        <i class="fas fa-award icon"></i>
-        <h3>Unmatched Quality</h3>
-        <p>Our wraps are premium and durable for a perfect fit.</p>
-      </div>
-      <div class="rizz-feature-card">
-        <i class="fas fa-leaf icon"></i>
-        <h3>Eco-Friendly Approach</h3>
-        <p>We use sustainable materials and processes.</p>
-      </div>
-      <div class="rizz-feature-card">
-        <i class="fas fa-rocket icon"></i>
-        <h3>Innovative Technology</h3>
-        <p>Cutting-edge 3D printing brings your designs to life.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-logo">
@@ -117,9 +88,7 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="cart.html">Cart</a></li>
       </ul>
-      <p class="copyright">
-        &copy; 2025 Rizz. All Rights Reserved.
-      </p>
+      <p style="margin-top:10px; color:#999; font-size:0.9rem;">&copy; 2025 Rizz. All Rights Reserved.</p>
     </div>
   </footer>
 
