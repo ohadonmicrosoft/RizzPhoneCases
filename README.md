@@ -27,7 +27,10 @@
    - See item details and total cost.
 
 5. **Authentication**  
-   - Login/Registration pages for personalizing the experience and saving designs (not fully implemented unless connected to backend).
+   - Login/Registration pages for personalizing the experience and saving designs.
+
+6. **Contact Form**  
+   - Allows users to send messages or inquiries.
 
 ---
 
@@ -121,7 +124,7 @@ Below is the project directory structure:
 
 ```
 RizzPhoneCases/
-├── README.md
+├── [README.md](http://_vscodecontentref_/1)
 ├── assets
 │   ├── images
 │   │   ├── gallery-1.jpg
@@ -131,19 +134,20 @@ RizzPhoneCases/
 │   │   └── placeholder-case.png
 │   └── videos
 │       └── sample-video.mp4
-├── cart.html
-├── contact.html
+├── [cart.html](http://_vscodecontentref_/2)
+├── [contact.html](http://_vscodecontentref_/3)
 ├── css
-│   └── style.css
-├── customizer.html
-├── gallery.html
-├── index.html
+│   └── [style.css](http://_vscodecontentref_/4)
+├── [customizer.html](http://_vscodecontentref_/5)
+├── [gallery.html](http://_vscodecontentref_/6)
+├── [index.html](http://_vscodecontentref_/7)
 ├── js
-│   ├── customizer.js
-│   ├── main.js
-│   └── menu.js
-├── login.html
-└── register.html
+│   ├── [customizer.js](http://_vscodecontentref_/8)
+│   ├── [main.js](http://_vscodecontentref_/9)
+│   ├── [menu.js](http://_vscodecontentref_/10)
+│   └── [three-customizer.js](http://_vscodecontentref_/11)
+├── [login.html](http://_vscodecontentref_/12)
+└── [register.html](http://_vscodecontentref_/13)
 ```
 
 - **assets/** – Contains images and videos used throughout the site.  
@@ -152,6 +156,20 @@ RizzPhoneCases/
   - `menu.js` handles the navigation menu (sidebar toggles).  
   - `main.js` handles global scripts (e.g., forms).  
   - `customizer.js` handles the phone case customizer logic.
+  - `three-customizer.js` handles the 3D customizer logic.
+
+---
+
+## Technologies Used
+
+- **HTML5**: For structuring the web pages.
+- **CSS3**: For styling the web pages.
+- **JavaScript**: For adding interactivity to the web pages.
+- **Fabric.js**: For the 2D customizer functionality.
+- **Three.js**: For the 3D viewer functionality.
+- **Node.js**: For running the development server.
+- **npm**: For managing dependencies.
+- **Git**: For version control.
 
 ---
 
